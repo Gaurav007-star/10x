@@ -21,7 +21,7 @@ const DemoExample = ({ imgLink, videoLink, thumbnail }) => {
         )}
 
         {videoLink && (
-          <div className="video-section relative w-full h-full rounded-xl bg-red-200 overflow-hidden">
+          <div className="video-section relative w-full h-full rounded-xl overflow-hidden">
             <img
               src={thumbnail}
               alt="thumbnail"
