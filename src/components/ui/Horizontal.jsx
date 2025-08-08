@@ -4,14 +4,10 @@ import image from "../../asset/heroBackground.jpg";
 import aiImage from "../../asset/ai.jpg";
 import DemoExample from "./DemoExample";
 
-
 // title section
 const Horizontal = () => {
   return (
-    <div className="bg-white">
-      <div className="flex h-max items-center justify-center">
-        <h1 className="font-semibold text-[100px] text-primary">Demo</h1>
-      </div>
+    <div className="bg-white my-20">
       <HorizontalScrollCarousel />
     </div>
   );
@@ -24,11 +20,14 @@ const HorizontalScrollCarousel = () => {
     target: targetRef
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["30%", "-30%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-card">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+    <section ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 flex flex-col h-screen items-center justify-center overflow-hidden">
+        <h1 className="font-semibold w-full flex items-center justify-center text-[100px] text-primary mb-10">
+          <span>Demo</span>
+        </h1>
         <motion.div style={{ x }} className="flex gap-14">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
@@ -78,7 +77,10 @@ const cards = [
   },
   {
     component: DemoExample,
-    props: { imgLink: "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg" },
+    props: {
+      imgLink:
+        "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg"
+    },
     id: 3
   }
 ];

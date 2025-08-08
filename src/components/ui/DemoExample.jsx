@@ -25,7 +25,7 @@ const DemoExample = ({ imgLink, videoLink, thumbnail }) => {
             <img
               src={thumbnail}
               alt="thumbnail"
-              className="w-full h-full rounded-xl z-10"
+              className="w-full h-auto rounded-xl z-10"
             />
 
             <Dialog>
@@ -53,7 +53,7 @@ const DemoExample = ({ imgLink, videoLink, thumbnail }) => {
           <Button
             className={`w-[90%] h-[45px] hover:bg-accent-foreground hover:text-secondary bg-accent rounded-4xl text-accent-foreground hover:scale-105 `}
           >
-            Click to visit
+            Know more
           </Button>
         </div>
       </div>

@@ -18,7 +18,10 @@ const rows = [
   { title: "Personalized Learning", color: "#C094DF" },
   { title: "Personalized Assessment", color: "#87ADFE" },
   { title: "Community Participation", color: "#4EC4F0" },
-  { title: "Collaborative Teaching, Exposure, and Ownership", color: "#87ADFE" },
+  {
+    title: "Collaborative Teaching, Exposure, and Ownership",
+    color: "#87ADFE"
+  },
   { title: "Inclusive of Learning Disabilities", color: "#1F41AE" },
   { title: "Equality of Opportunity", color: "#C094DF" },
   { title: "Pedagogical Innovation", color: "#87ADFE" },
@@ -41,6 +44,7 @@ const matrix = [
 const MatrixTable = () => {
   const [hoveredRow, setHoveredRow] = useState(null);
   const [hoveredCol, setHoveredCol] = useState(null);
+  const [hoveredCell, setHoveredCell] = useState({ row: null, col: null });
 
   return (
     <div className="overflow-hidden p-4 cursor-pointer w-[90%] font-serif mx-auto">
@@ -51,11 +55,20 @@ const MatrixTable = () => {
             {columns.map((col, colIndex) => (
               <motion.th
                 key={colIndex}
-                className={`w-[200px] p-2 text-[18px] transition-all duration-200`}
+                className="w-[200px] p-2 text-[18px] transition-all duration-200"
+                style={{
+                  color:
+                    hoveredCol === colIndex || hoveredCell.col === colIndex
+                      ? rows[hoveredCell.row]?.color || "#000"
+                      : "#000"
+                }}
                 onMouseEnter={() => setHoveredCol(colIndex)}
                 onMouseLeave={() => setHoveredCol(null)}
                 animate={{
-                  scale: hoveredCol === colIndex ? 1.05 : 1
+                  scale:
+                    hoveredCol === colIndex || hoveredCell.col === colIndex
+                      ? 1.05
+                      : 1
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -74,26 +87,37 @@ const MatrixTable = () => {
               transition={{ duration: 0.3 }}
             >
               <th
-                className={`p-2 w-[200px] text-[16px] text-left transition-all duration-200`}
+                className="p-2 w-[200px] text-[16px] text-left transition-all duration-200"
+                style={{
+                  color:
+                    hoveredRow === rowIndex || hoveredCell.row === rowIndex
+                      ? row.color
+                      : row.color
+                }}
                 onMouseEnter={() => setHoveredRow(rowIndex)}
                 onMouseLeave={() => setHoveredRow(null)}
               >
-                <div style={{ color: row.color }}>{row.title}</div>
+                {row.title}
               </th>
               {columns.map((_, colIndex) => {
                 const isHovered =
-                  hoveredRow === rowIndex || hoveredCol === colIndex;
+                  hoveredRow === rowIndex ||
+                  hoveredCol === colIndex ||
+                  (hoveredCell.row === rowIndex &&
+                    hoveredCell.col === colIndex);
+
                 const applyColor =
-                  hoveredRow === rowIndex
+                  hoveredRow === rowIndex || hoveredCol === colIndex
                     ? row.color
-                    : hoveredCol === colIndex
-                    ? rows[rowIndex]?.color
+                    : hoveredCell.row === rowIndex &&
+                      hoveredCell.col === colIndex
+                    ? row.color
                     : "";
 
                 return (
                   <motion.td
                     key={colIndex}
-                    className={`p-2 text-center h-[50px] transition-all duration-200 text-white`}
+                    className="p-2 text-center h-[50px] transition-all duration-200 text-white"
                     style={{
                       backgroundColor:
                         isHovered && applyColor
@@ -103,12 +127,24 @@ const MatrixTable = () => {
                           : "#CBD5E1",
                       border: "none"
                     }}
+                    onMouseEnter={() =>
+                      setHoveredCell({ row: rowIndex, col: colIndex })
+                    }
+                    onMouseLeave={() =>
+                      setHoveredCell({ row: null, col: null })
+                    }
                     animate={{
-                      scale: isHovered ? 1.1 : 1
+                      scale:
+                        hoveredCell.row === rowIndex &&
+                        hoveredCell.col === colIndex
+                          ? 1.15
+                          : isHovered
+                          ? 1.1
+                          : 1
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {matrix[rowIndex][colIndex]}
+                    <span>{matrix[rowIndex][colIndex]}</span>
                   </motion.td>
                 );
               })}

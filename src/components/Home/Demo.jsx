@@ -7,7 +7,7 @@ import Horizontal from "../ui/Horizontal";
 const Demo = () => {
   // Start at middle
   return (
-    <Element name="demo" className="my-10">
+    <Element name="demo">
       <Horizontal />
     </Element>
   );

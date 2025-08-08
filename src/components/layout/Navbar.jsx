@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import kgpIcon from "../../asset/kgp-icon.png";
+import MainLogo from "../../asset/mainLogo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState({
@@ -24,12 +25,17 @@ const Navbar = () => {
     <div className="navbar w-full h-max flex items-center justify-between py-5 px-10">
       {/* logo section */}
       <div className="left logo-section font-serif leading-11 cursor-pointer">
-        <h1 className="text-[40px] font-bold text-primary-foreground">10x TEACHER </h1>
-        <h2 className="text-[40px] font-bold">CoEAI4Edu</h2>
+        {/* <h1 className="text-[40px] font-bold text-primary-foreground">10x TEACHER </h1>
+        <h2 className="text-[40px] font-bold">CoEAI4Edu</h2> */}
+        <img
+          src={MainLogo}
+          alt="logo"
+          className="h-[60px] w-fit object-cover"
+        />
       </div>
 
       {/* link-section */}
-      <div className="right link-section flex items-center gap-8 cursor-pointer font-medium text-[18px]">
+      <div className="right link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
         <Link
           to="hero"
           id="hero"
@@ -81,7 +87,7 @@ const Navbar = () => {
         <img
           src={kgpIcon}
           alt="kgp/logo"
-          className="w-20 h-fit bg-cover bg-center"
+          className="w-20 h-fit bg-cover bg-center ml-10"
         />
       </div>
     </div>

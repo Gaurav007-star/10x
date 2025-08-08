@@ -27,7 +27,7 @@ export const Timeline = ({ data }) => {
       <div className="w-full h-max flex flex-col items-center justify-center px-20 py-10">
         <h2 className="w-full h-max text-center text-[60px] font-bold bg-gradient-to-r from-primary to-blue-200 bg-clip-text text-transparent">
           Capabilities in Educational{" "}
-          <span className="text-[80px] text-accent-foreground">Activity</span>
+          <span className="text-[80px] text-primary">Activity</span>
         </h2>
         <p className="w-full h-max text-center text-[18px] font-light leading-9 text-secondary-foreground px-10">
           <span>
