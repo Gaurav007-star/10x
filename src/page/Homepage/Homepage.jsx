@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <>
       <Helmet>
-        <title>Home-Ai education</title>
+        <title> Center of Excellence in AI for Education.</title>
         <meta charSet="utf-8" />
         <meta name="description" content="Home page IIT KGP" />
       </Helmet>

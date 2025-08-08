@@ -1,11 +1,20 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import KgpLogo from "../../asset/kgp-icon.png";
+import MainLogo from "../../asset/mainLogo.png";
+
 import { Link } from "react-router";
 const defaultAddresses = [
-  { title: "aiEduKgp@example.com" },
-  { title: "91+ 1234432564" },
-  { title: "Akkarai, Near VGP Universal Kingdom" }
+  { id: "email", title: "info@10x-teacher.com" },
+  { id: "phone", title: "+91 - 3222 - 283754, 284756" },
+  {
+    id: "address",
+    title: "Indian Institute of Technology Kharagpur"
+  },
+  {
+    id: "address",
+    title: "Kharagpur, Paschim Medinipur, West Bengal, India - 721302"
+  }
 ];
 
 const defaultSocialLinks = [
@@ -24,9 +33,12 @@ export const Footer = () => {
         {/* TOP ROW */}
         <div className="flex w-full justify-between items-start mt-[50px]">
           {/* LEFT SIDE */}
-          <div className="w-[55%]">
-            <h2 className="text-2xl font-bold">10x TEACHER</h2>
-            <h3 className="text-xl font-normal">CoEAI4Edu</h3>
+          <div className="w-[55%] flex flex-col gap-2">
+            <img
+              src={MainLogo}
+              alt="logo"
+              className="w-[400px] h-auto object-cover"
+            />
             <p className="mt-5 text-sm leading-relaxed max-w-[50%]">
               Empowering the next generation with AI-driven learning. We provide
               accessible, innovative education solutions to prepare learners for
@@ -54,7 +66,12 @@ export const Footer = () => {
 
             <div className="w-full flex flex-col justify-center items-end">
               {defaultAddresses.map((item, i) => (
-                <div key={i}>{item.title}</div>
+                <div
+                  key={i}
+                  className={` flex justify-end items-center text-right `}
+                >
+                  {item.title}
+                </div>
               ))}
             </div>
           </div>
@@ -63,9 +80,24 @@ export const Footer = () => {
         {/* BOTTOM ROW */}
         <div className="text-xs text-center mt-8 pb-5 text-gray-500">
           <div className="w-full flex items-center justify-center gap-20 p-4 font-medium text-primary text-[18px] my-4">
-            <Link to={"#"} className="hover:scale-105 transition-transform duration-200 cursor-pointer">Cookie policy</Link>
-            <Link to={"#"} className="hover:scale-105 transition-transform duration-200 cursor-pointer">Privacy policy</Link>
-            <Link to={"#"} className="hover:scale-105 transition-transform duration-200 cursor-pointer">Legal disclaimer</Link>
+            <Link
+              to={"#"}
+              className="hover:scale-105 transition-transform duration-200 cursor-pointer"
+            >
+              Cookie policy
+            </Link>
+            <Link
+              to={"#"}
+              className="hover:scale-105 transition-transform duration-200 cursor-pointer"
+            >
+              Privacy policy
+            </Link>
+            <Link
+              to={"#"}
+              className="hover:scale-105 transition-transform duration-200 cursor-pointer"
+            >
+              Legal disclaimer
+            </Link>
           </div>
           ©{date} 10x Teacher CoEAI4Edu | All rights reserved | Designed by{" "}
           <a

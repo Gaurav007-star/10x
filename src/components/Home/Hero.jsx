@@ -40,14 +40,14 @@ const Hero = () => {
         {/* heading-section */}
         <div className="heading w-full h-max z-50 flex flex-col items-center justify-center mt-20 mb-10">
           <BoxReveal boxColor={"#3b82f6"} duration={0.7}>
-            <h1 className="text-left text-[12vh] font-serif font-bold leading-[70px] w-full bg-linear-to-r from-[#89c9f3] to-primary bg-clip-text text-transparent py-3">
-              Center of Excellence in
+            <h1 className="text-left text-[15vh] font-serif font-bold leading-[70px] w-full bg-linear-to-r from-[#89c9f3] to-primary bg-clip-text text-transparent py-3">
+              Center of Excellence 
             </h1>
           </BoxReveal>
 
           <BoxReveal boxColor={"#3b82f6"} duration={1}>
-            <h2 className="text-[100px] text-secondary-foreground font-semibold py-3">
-              AI for Education.
+            <h2 className="text-[70px] text-secondary-foreground font-semibold py-3">
+              in AI for Education.
             </h2>
           </BoxReveal>
         </div>
@@ -85,7 +85,7 @@ const Hero = () => {
             </div>
 
             <ul className="w-full h-max flex flex-col items-start text-[20px] text-secondary-foreground font-medium">
-              <p className="flex items-start gap-3 text-primary text-[16px]">
+              <p className="flex items-start gap-3 text-secondary-foreground text-[16px]">
                 We aim to build an AI-powered education system for joyful,
                 inclusive, and personalized learning. We use Generative AI to
                 help teachers work smarter and have greater impact. We will
@@ -105,7 +105,7 @@ const Hero = () => {
             </TypingAnimation>
 
             <ul className="w-full h-max flex flex-col items-start text-[20px] text-secondary-foreground font-medium">
-              <p className="flex items-start gap-3 text-primary text-[16px]">
+              <p className="flex items-start gap-3 text-secondary-foreground text-[16px]">
                 We strive to transform education by integrating AI into everyday
                 teaching and learning. We create tools and content that make
                 lessons engaging, personalized, and accessible for all students.
