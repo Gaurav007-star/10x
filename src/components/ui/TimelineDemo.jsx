@@ -1,6 +1,20 @@
 import React from "react";
 import BulletPoint from "../../asset/capabilities/bullet-point.png";
 import { Timeline } from "./timeline";
+import Pedagogy01 from "../../asset/capabilities/pedagogy01.jpg";
+import Pedagogy02 from "../../asset/capabilities/pedagogy02.jpg";
+import contentCreation01 from "../../asset/capabilities/contentCreation01.jpg";
+import contentCreation02 from "../../asset/capabilities/contentCreation02.jpg";
+import curriculum01 from "../../asset/capabilities/curriculum01.jpg";
+import curriculum02 from "../../asset/capabilities/curriculum02.jpg";
+import contentDelivery01 from "../../asset/capabilities/contentDelivery01.jpg";
+import contentDelivery02 from "../../asset/capabilities/contentDelivery02.jpg";
+import teacherTrining01 from "../../asset/capabilities/teacherTraining01.jpg";
+import teacherTrining02 from "../../asset/capabilities/teacherTraining02.jpg";
+import educationSld01 from "../../asset/capabilities/educationSld01.jpg";
+import educationSld02 from "../../asset/capabilities/educationSld02.jpg";
+import educationCenter01 from "../../asset/capabilities/educationCenter01.jpg";
+import educationCenter02 from "../../asset/capabilities/educationCenter02.jpg";
 
 const pedagogy = [
   "Developed the e-Shikshan tool – an open-source, web-based Pedagogy Framework Tool.",
@@ -80,28 +94,14 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/templates/startup-1.webp"
+            src={Pedagogy01}
             alt="startup template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/templates/startup-2.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/templates/startup-3.webp"
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/templates/startup-4.webp"
+            src={Pedagogy02}
             alt="startup template"
             width={500}
             height={500}
@@ -125,29 +125,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={contentCreation01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={contentCreation02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -170,29 +156,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={curriculum01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={curriculum02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -215,29 +187,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={contentDelivery01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={contentDelivery02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -260,29 +218,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={teacherTrining01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={teacherTrining02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -305,29 +249,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={educationSld01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={educationSld02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -350,29 +280,15 @@ const data = [
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
+            src={educationCenter01}
             alt="hero template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
           />
           <img
-            src="https://assets.aceternity.com/features-section.png"
+            src={educationCenter02}
             alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={500}
-            height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src="https://assets.aceternity.com/cards.png"
-            alt="cards template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
@@ -386,7 +302,7 @@ const data = [
 export function TimeLineDemo() {
   return (
     <div className="relative w-full overflow-clip bg-violet-500">
-      <Timeline data={data}/>
+      <Timeline data={data} />
     </div>
   );
 }
