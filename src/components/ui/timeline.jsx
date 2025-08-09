@@ -76,9 +76,9 @@ export const Timeline = ({ data = [] }) => {
         animate={{ opacity: showDots ? 1 : 0 }}
         transition={{ duration: 0.25 }}
         style={{ pointerEvents: showDots ? "auto" : "none" }}
-        className="fixed top-1/2 -translate-y-1/2 max-[1025px]:top-[90vh] max-[1025px]:translate-x-50 z-50 p-3 max-[1025px]:p-5 max-[1025px]:bg-primary-foreground rounded "
+        className="fixed top-1/2 -translate-y-1/2 z-50 p-3 rounded max-[1025px]:hidden"
       >
-        <div className="flex flex-col max-[1025px]:flex-row gap-3">
+        <div className="flex flex-col gap-3">
           {data.map((_, i) => (
             <button
               key={i}

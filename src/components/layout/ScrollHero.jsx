@@ -124,14 +124,14 @@ export default function ScrollHero() {
         ref={headingRef}
         style={{
           position: "absolute",
-          top: 0,
+          top: 20,
           left: 0,
           height: "120px",
           width: "100%",
-          textAlign: "center"
+          textAlign: "center",
         }}
       >
-        <h1 style={{ margin: 0, position: "relative", zIndex: 1 }} className="bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent">
+        <h1 style={{ margin: 0, position: "relative", zIndex: 1 }} className="font-bold font-serif bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent">
           Center of Excellence
         </h1>
       </div>
@@ -141,7 +141,7 @@ export default function ScrollHero() {
         ref={secondaHeadingRef}
         style={{
           position: "absolute",
-          top: "151px",
+          top: "130px",
           left: 0,
           height: "max-content",
           width: "100%",
@@ -158,6 +158,7 @@ export default function ScrollHero() {
             zIndex: 2,
             overflow: "hidden"
           }}
+          className="font-bold font-serif"
         >
           in AI for Education
         </h1>
