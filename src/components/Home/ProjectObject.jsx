@@ -12,15 +12,16 @@ import PulseCircle from "../ui/PulseCircle";
 const ProjectObject = () => {
   return (
     <Element name="project">
-      <div className="relative w-full h-max flex flex-col items-center px-20 pt-20 my-10">
-        <h1 className="absolute top-0 w-full h-max text-[60px] text-center text-primary font-bold p-2 z-20">10x Teacher Goals</h1>
+      <div className="relative w-full h-max flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 my-10 max-[1025px]:my-2">
+        <h1 className="absolute top-0 w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">10x Teacher Goals</h1>
         <img src={Goal10X} alt="" className="w-full h-full object-cover" />
       </div>
-      {/* TODO:matrix creation */}
-      <div className="grid-section w-full h-max flex flex-col items-center justify-center py-10">
+      
+      {/* matrix table */}
+      <div className="grid-section overflow-hidden w-full h-max flex flex-col items-center justify-center py-10 max-[450px]:py-0">
         <SparklesText sparklesCount="2">
-          <h1 className="text-[60px] font-sans text-primary font-semibold my-15 ">
-            <span className="w-max h-max bg-primary text-secondary px-4 py-6 rounded-xl shadow-md">
+          <h1 className="text-[60px] max-[450px]:text-[25px] font-sans text-primary font-semibold my-15 max-[450px]:mb-5 ">
+            <span className="w-max h-max bg-primary text-secondary px-4 py-6 max-[450px]:p-3 rounded-xl shadow-md">
               CoEAI4Edu
             </span>{" "}
             Verticals

@@ -1,63 +1,135 @@
-"use client";
-import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-export const Timeline = ({ data }) => {
-  const ref = useRef(null);
-  const containerRef = useRef(null);
-  const [height, setHeight] = useState(0);
+export const Timeline = ({ data = [] }) => {
+  const timelineRef = useRef(null); // <--- observe this (only the timeline area)
+  const itemRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrollingToItem, setIsScrollingToItem] = useState(false);
+  const [showDots, setShowDots] = useState(false);
 
+  // IntersectionObserver: show dots when at least ~10% of timeline is visible
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    if (!timelineRef.current) return;
+    const el = timelineRef.current;
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 10%", "end 50%"]
-  });
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        // tweak this threshold (0.05, 0.1, 0.2...) to show earlier/later
+        setShowDots(entry.intersectionRatio > 0.1);
+      },
+      {
+        root: null,
+        threshold: [0, 0.05, 0.1, 0.25, 0.5, 1]
+      }
+    );
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  // Update activeIndex based on which item is nearest center of viewport
+  useEffect(() => {
+    const onScroll = () => {
+      if (isScrollingToItem) return;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      itemRefs.current.forEach((item, idx) => {
+        if (!item) return;
+        const rect = item.getBoundingClientRect();
+        const distance = Math.abs(
+          rect.top + rect.height / 2 - window.innerHeight / 2
+        );
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = idx;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // initial check
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isScrollingToItem]);
+
+  const scrollToItem = (index) => {
+    setIsScrollingToItem(true);
+    setActiveIndex(index);
+    itemRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+    // small timeout — increase if you have heavy content or long smooth scroll timing
+    setTimeout(() => setIsScrollingToItem(false), 700);
+  };
 
   return (
-    <div className="w-full bg-white md:px-10" ref={containerRef}>
-      <div className="w-full h-max flex flex-col items-center justify-center px-20 pt-10">
-        <h2 className="w-full h-max text-center text-[60px] font-bold text-primary">
+    <section className="relative w-full md:px-10 bg-white">
+      {/* Fixed dot navigation (fades in/out). pointerEvents disabled when hidden */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showDots ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
+        style={{ pointerEvents: showDots ? "auto" : "none" }}
+        className="fixed top-1/2 -translate-y-1/2 max-[1025px]:top-[90vh] max-[1025px]:translate-x-50 z-50 p-3 max-[1025px]:p-5 max-[1025px]:bg-primary-foreground rounded "
+      >
+        <div className="flex flex-col max-[1025px]:flex-row gap-3">
+          {data.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollToItem(i)}
+              aria-label={`Go to item ${i + 1}`}
+              className={`w-3 h-3 max-[1025px]:w-5 max-[1025px]:h-5 rounded-full transition-transform cursor-pointer ${
+                activeIndex === i
+                  ? "bg-primary scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Header (kept outside the observed timeline block so it won't keep dots visible) */}
+      <div className="w-full flex flex-col items-center justify-center px-6 my-20">
+        <h2 className="w-full text-center max-[450px]:text-[30px] max-[1025px]:text-[60px] text-[60px] font-bold text-primary leading-tight">
           Capabilities in Educational{" "}
-          <span className="text-[80px] text-primary">Activity</span>
+          <span className="max-[450px]:text-[30px] max-[1025px]:text-[60px] text-[80px] text-primary">
+            Activity
+          </span>
         </h2>
-        <p className="w-full h-max text-center text-[18px] leading-9 text-secondary-foreground px-15">
-          <span>
-            We harness the power of AI to re-imagine education—making learning
-            more inclusive, interactive, and impactful.{" "}
-          </span>
-          <span className="text-[16px]">
-            From assistive technologies for diverse learners to immersive tools
-            like AR/VR, our initiatives blend innovation with accessibility.
-          </span>
+        <p className="w-full text-center text-[18px] max-[1025px]:text-[16px] leading-7 text-secondary-foreground">
+          We harness the power of AI to re-imagine education—making learning
+          more inclusive, interactive, and impactful. From assistive
+          technologies for diverse learners to immersive tools like AR/VR, our
+          initiatives blend innovation with accessibility.
         </p>
       </div>
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+
+      {/* TIMELINE: THIS is the element we observe */}
+      <div ref={timelineRef} className="relative max-w-7xl mx-auto pb-20 ">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-30 md:gap-10"
+            ref={(el) => (itemRefs.current[index] = el)}
+            className="flex max-[1025px]:flex-col justify-start pt-10 gap-10 max-[1025px]:gap-5"
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-20 self-start max-w-xs lg:max-w-sm md:w-full">
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-primary ">
+            <div className="min-[1025px]:sticky flex flex-row max-[1025px]:flex-col z-40 items-center top-30 self-start max-w-xs max-[1025px]:max-w-full w-full">
+              <h3 className="block text-[40px] max-[450px]:text-[20px] px-15 max-[1025px]:px-5 font-bold text-primary">
                 {item.title}
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full text-secondary-foreground">
-              {item.content}{" "}
+            <div className="relative pl-6 pr-4 m-5 max-[1025px]:m-2 w-full text-secondary-foreground">
+              {item.content}
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

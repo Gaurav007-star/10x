@@ -84,7 +84,7 @@ const data = [
     title: "Pedagogy",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {pedagogy.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -92,7 +92,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={Pedagogy01}
             alt="startup template"
@@ -113,7 +113,7 @@ const data = [
     title: "Content Creation",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {contentCreation.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -121,7 +121,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={contentCreation01}
             alt="hero template"
@@ -144,7 +144,7 @@ const data = [
     title: "Curriculum & Accreditation",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {curriculum.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -152,7 +152,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={curriculum01}
             alt="hero template"
@@ -175,7 +175,7 @@ const data = [
     title: "Content Delivery",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {contentDelivery.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -183,7 +183,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={contentDelivery01}
             alt="hero template"
@@ -206,7 +206,7 @@ const data = [
     title: "Teacher Training",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {teacherTraining.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -214,7 +214,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={teacherTrining01}
             alt="hero template"
@@ -237,7 +237,7 @@ const data = [
     title: "Education in SLD",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {education_in_sld.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -245,7 +245,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={educationSld01}
             alt="hero template"
@@ -268,7 +268,7 @@ const data = [
     title: "Education Center",
     content: (
       <div>
-        <div className="mb-8 text-[18px] font-medium leading-9">
+        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
           {education_center.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
@@ -276,7 +276,7 @@ const data = [
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
           <img
             src={educationCenter01}
             alt="hero template"
@@ -299,7 +299,7 @@ const data = [
 
 export function TimeLineDemo() {
   return (
-    <div className="relative w-full overflow-clip bg-violet-500">
+    <div className="relative w-full overflow-clip">
       <Timeline data={data} />
     </div>
   );

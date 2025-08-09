@@ -31,22 +31,22 @@ export const Footer = () => {
     <section className="w-full h-[500px] px-[8%]">
       <div className="w-full h-full flex flex-col justify-between">
         {/* TOP ROW */}
-        <div className="flex w-full justify-between items-start mt-[50px]">
+        <div className="flex max-[450px]:flex-col w-full justify-between items-start mt-[50px]">
           {/* LEFT SIDE */}
-          <div className="w-[55%] flex flex-col gap-2">
+          <div className="w-[55%] max-[450px]:w-full flex flex-col gap-2">
             <img
               src={MainLogo}
               alt="logo"
               className="w-[400px] h-auto object-cover"
             />
-            <p className="mt-5 text-sm leading-relaxed max-w-[50%]">
+            <p className="mt-5 text-sm max-[450px]:text-[14px] leading-relaxed w-[50%] max-[1025px]:w-[70%] max-[450px]:w-full">
               Empowering the next generation with AI-driven learning. We provide
               accessible, innovative education solutions to prepare learners for
               the future.
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-4 mt-5 text-xl">
+            <div className="flex gap-4 mt-5 text-xl max-[450px]:hidden">
               {defaultSocialLinks.map((social, idx) => (
                 <a
                   key={idx}
@@ -61,17 +61,30 @@ export const Footer = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-2 items-end justify-center">
+          <div className="flex flex-col gap-2 items-end max-[450px]:items-start justify-center max-[450px]:my-5">
             <img src={KgpLogo} alt="Kgp Logo" className="w-[100px] h-auto" />
 
-            <div className="w-full flex flex-col justify-center items-end">
+            <div className="w-full flex flex-col justify-center items-end max-[450px]:items-start">
               {defaultAddresses.map((item, i) => (
                 <div
                   key={i}
-                  className={` flex justify-end items-center text-right `}
+                  className={` flex justify-end max-[450px]:justify-start items-center text-right max-[450px]:text-left `}
                 >
                   {item.title}
                 </div>
+              ))}
+            </div>
+
+             <div className="flex gap-4 mt-5 text-xl max-[450px]:text-2xl min-[450px]:hidden">
+              {defaultSocialLinks.map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="text-inherit hover:text-blue-500"
+                >
+                  {social.icon}
+                </a>
               ))}
             </div>
           </div>
@@ -79,7 +92,7 @@ export const Footer = () => {
 
         {/* BOTTOM ROW */}
         <div className="text-xs text-center mt-8 pb-5 text-gray-500">
-          <div className="w-full flex items-center justify-center gap-20 p-4 font-medium text-primary text-[18px] my-4">
+          <div className="w-full flex items-center justify-center gap-20 max-[450px]:gap-2 px-4 py-4 max-[450px]:px-2 font-medium text-primary text-[18px] max-[450px]:text-[14px] my-4">
             <Link
               to={"#"}
               className="hover:scale-105 transition-transform duration-200 cursor-pointer"

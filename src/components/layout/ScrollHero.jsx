@@ -1,0 +1,191 @@
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HeroBackground from "../../asset/heroBackground.jpg"; // replace with your image path
+import { BoxReveal } from "@/components/magicui/box-reveal";
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ScrollHero() {
+  const headingRef = useRef(null);
+  const secondaHeadingRef = useRef(null);
+  const imageRef = useRef(null);
+  const parentRef = useRef(null);
+
+  useEffect(() => {
+    const heading = headingRef.current;
+    const secondHeading = secondaHeadingRef.current;
+    const h1 = heading.querySelectorAll("h1");
+    const h2 = secondHeading.querySelectorAll("h1");
+    const image = imageRef.current;
+    const parent = parentRef.current;
+
+    // First heading container animation (move + fade during scale)
+    gsap.fromTo(
+      heading,
+      { y: 0, opacity: 1 },
+      {
+        y: window.innerHeight / 2 - heading.offsetHeight / 2 - 100,
+        opacity: 0, // fade out while moving
+        scrollTrigger: {
+          trigger: parent,
+          start: "top top",
+          end: "+=500", // slower fade-out
+          scrub: true
+        }
+      }
+    );
+
+    // Second heading container animation (move + fade during scale)
+    gsap.fromTo(
+      secondHeading,
+      { y: 0, opacity: 1 },
+      {
+        y: window.innerHeight / 2 - heading.offsetHeight / 2,
+        opacity: 0, // final opacity
+        keyframes: [
+          { opacity: 0.7, ease: "power1.in", duration: 0.7 }, // mid fade
+          { opacity: 0, ease: "power1.out", duration: 0.3 } // fade out fully
+        ],
+        scrollTrigger: {
+          trigger: parent,
+          start: "top top",
+          end: "+=500",
+          scrub: true
+        }
+      }
+    );
+
+    // First heading font size + fade while scaling
+    gsap.fromTo(
+      h1,
+      { fontSize: "100px", opacity: 1 },
+      {
+        fontSize: "120px",
+        opacity: 0.6, // stop at 0.6 instead of disappearing
+        scrollTrigger: {
+          trigger: parent,
+          start: "top top",
+          end: "+=500", // longer duration
+          scrub: true
+        }
+      }
+    );
+
+    // Second heading font size + fade while scaling
+    gsap.fromTo(
+      h2,
+      { fontSize: "80px", opacity: 1 },
+      {
+        fontSize: "180px",
+        zIndex: 20,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: parent,
+          start: "top top",
+          end: "+=500",
+          scrub: true
+        }
+      }
+    );
+
+    // Image movement + fade-out upward
+    gsap.fromTo(
+      image,
+      { y: 0, opacity: 1, scale: 1 },
+      {
+        y: -150, // move upward more for dramatic fade
+        opacity: 0, // fade out completely
+        scale: 1.3,
+        ease: "power1.inOut", // smooth upward drift
+        scrollTrigger: {
+          trigger: parent,
+          start: "top top",
+          end: "+=500", // slightly longer fade
+          scrub: true
+        }
+      }
+    );
+  }, []);
+
+  return (
+    <div
+      ref={parentRef}
+      style={{
+        height: "100%",
+        width: "100%",
+        position: "relative",
+        textAlign: "center",
+        overflow: "hidden"
+      }}
+      className="max-[1025px]:hidden"
+    >
+      {/* First heading */}
+      <div
+        ref={headingRef}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          height: "120px",
+          width: "100%",
+          textAlign: "center"
+        }}
+      >
+        <h1 style={{ margin: 0, position: "relative", zIndex: 1 }} className="bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent">
+          Center of Excellence
+        </h1>
+      </div>
+
+      {/* Second heading */}
+      <div
+        ref={secondaHeadingRef}
+        style={{
+          position: "absolute",
+          top: "151px",
+          left: 0,
+          height: "max-content",
+          width: "100%",
+          textAlign: "center",
+          zIndex: 20,
+          // backgroundColor: "cadetblue",
+          textWrap: "nowrap"
+        }}
+      >
+        <h1
+          style={{
+            margin: 0,
+            position: "relative",
+            zIndex: 2,
+            overflow: "hidden"
+          }}
+        >
+          in AI for Education
+        </h1>
+      </div>
+
+      {/* Image */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "50vh",
+          zIndex: 5,
+          position: "relative"
+        }}
+      >
+        <img
+          ref={imageRef}
+          src={HeroBackground}
+          alt="demo"
+          style={{
+            width: "900px",
+            height: "auto",
+            objectFit: "cover",
+            borderRadius: "20px"
+          }}
+        />
+      </div>
+    </div>
+  );
+}

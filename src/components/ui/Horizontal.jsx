@@ -7,7 +7,7 @@ import DemoExample from "./DemoExample";
 // title section
 const Horizontal = () => {
   return (
-    <div className="bg-white my-20">
+    <div className="bg-white my-20 max-[1025px]:m-0 ">
       <HorizontalScrollCarousel />
     </div>
   );
@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex flex-col h-screen items-center justify-center overflow-hidden">
-        <h1 className="font-semibold w-full flex items-center justify-center text-[100px] text-primary mb-10">
+        <h1 className="font-semibold w-full h-max flex items-center justify-center text-[100px] text-primary mt-5 mb-10">
           <span>Demo</span>
         </h1>
         <motion.div style={{ x }} className="flex gap-14">

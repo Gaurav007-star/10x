@@ -22,20 +22,18 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar w-full h-max flex items-center justify-between py-5 px-10">
+    <div className="navbar w-full h-max flex items-center justify-between py-5 max-[450px]:py-5 max-[1025px]:py-8 px-10 max-[450px]:px-5">
       {/* logo section */}
       <div className="left logo-section font-serif leading-11 cursor-pointer">
-        {/* <h1 className="text-[40px] font-bold text-primary-foreground">10x TEACHER </h1>
-        <h2 className="text-[40px] font-bold">CoEAI4Edu</h2> */}
         <img
           src={MainLogo}
           alt="logo"
-          className="h-[60px] w-fit object-cover"
+          className="h-[60px] max-[1025px]:h-[50px] max-[450px]:h-[30px] w-fit object-cover"
         />
       </div>
 
       {/* link-section */}
-      <div className="right link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
+      <div className="right max-[1025px]:hidden link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
         <Link
           to="hero"
           id="hero"
@@ -90,8 +88,44 @@ const Navbar = () => {
           className="w-20 h-fit bg-cover bg-center ml-10"
         />
       </div>
+      <MenuSidebarComponent/>
     </div>
   );
 };
 
 export default Navbar;
+
+
+
+// Sidebar part
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+
+const MenuSidebarComponent = () => {
+  return (
+    <div className="drawer max-[1025px]:block hidden w-max ">
+      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content  ">
+        {/* Page content here */}
+        <label htmlFor="my-drawer">
+          <HiOutlineMenuAlt3 className="text-secondary-foreground text-4xl"/>
+        </label>
+      </div>
+      <div className="drawer-side z-50">
+        <label
+          htmlFor="my-drawer"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          {/* Sidebar content here */}
+          <li>
+            <a>Sidebar Item 1</a>
+          </li>
+          <li>
+            <a>Sidebar Item 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
