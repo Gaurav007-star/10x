@@ -12,7 +12,8 @@ import PulseCircle from "../ui/PulseCircle";
 const ProjectObject = () => {
   return (
     <Element name="project">
-      <div className="w-full h-max flex px-20">
+      <div className="relative w-full h-max flex flex-col items-center px-20 pt-20 my-10">
+        <h1 className="absolute top-0 w-full h-max text-[60px] text-center text-primary font-bold p-2 z-20">10x Teacher Goals</h1>
         <img src={Goal10X} alt="" className="w-full h-full object-cover" />
       </div>
       {/* TODO:matrix creation */}

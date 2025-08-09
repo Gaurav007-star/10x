@@ -1,0 +1,10 @@
+/* ensures translateZ produces a visible 3D effect */
+.perspective {
+  perspective: 1200px;           /* adjust for stronger/weaker depth */
+  perspective-origin: 50% 50%;
+}
+
+/* preserved so children transforms (translateZ) render in 3D */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
