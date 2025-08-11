@@ -8,13 +8,18 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import MatrixTable from "../layout/MatrixTable";
 import Goal10X from "../../asset/Goal10X.png";
 import PulseCircle from "../ui/PulseCircle";
+import TenXLayoutResponsive from "../layout/TenxLayoutResponsive";
+import TenXTeacher from "../ui/TenXTeacher";
 
 const ProjectObject = () => {
   return (
     <Element name="project">
       <div className="relative w-full h-max flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 my-10 max-[1025px]:my-2">
         <h1 className="absolute top-0 w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">10x Teacher Goals</h1>
-        <img src={Goal10X} alt="" className="w-full h-full object-cover" />
+        <img src={Goal10X} alt="" className="w-full h-full object-cover max-[1025px]:hidden" />
+
+        {/* This layout is for mobile-responsive where we show options in stack */}
+        <TenXLayoutResponsive/>
       </div>
       
       {/* matrix table */}

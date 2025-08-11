@@ -5,7 +5,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import ScrollHero from "../layout/ScrollHero";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import Background from "../../asset/heroBackground.jpg";
+import Background from "../../asset/teachingBackground.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,19 +36,21 @@ const Hero = () => {
               Center of Excellence
             </h1>
 
-            <h2 className="text-[50px] max-[450px]:text-[30px] px-2">in AI for Education</h2>
+            <h2 className="text-[50px] max-[450px]:text-[30px] px-2">
+              in AI for Education
+            </h2>
           </div>
           <div className="image-section w-full h-max max-[450px]:px-5 my-5">
             <img
               src={Background}
               alt="background"
-              className="w-auto h-[400px] max-[450px]:h-[300px] object-cover object-center rounded-2xl"
+              className="w-full h-[400px] max-[450px]:h-fit object-cover object-center rounded-2xl"
             />
           </div>
         </div>
 
         {/* vision-mission-section */}
-        <div className="vision-mission w-full h-max flex max-[450px]:flex-col items-center justify-between gap-4 text-primary px-[10vw] max-[1025px]:px-10 max-[450px]:px-5 cursor-pointer z-20">
+        <div className="vision-mission w-full h-max flex max-[450px]:flex-col items-center justify-between gap-4 text-primary px-[10vw] max-[1025px]:px-10 max-[450px]:px-5 cursor-pointer z-20 mt-5">
           {/* left-VISION-section */}
           <div className="left w-[50%] max-[450px]:w-full h-max flex flex-col justify-center ">
             <div className="left-heading-section w-full h-[50%] flex items-center gap-2">
@@ -80,7 +82,6 @@ const Hero = () => {
 
           {/* right-MISSION-section */}
           <div className="right w-[50%] max-[450px]:w-full h-max bg-secondary max-[450px]:bg-transparent flex flex-col justify-center py-10 max-[1025px]:py-6 px-5 max-[450px]:p-0 rounded-4xl ">
-
             <div className="right-heading-section w-full h-[50%] flex items-center">
               <TypingAnimation
                 startOnView

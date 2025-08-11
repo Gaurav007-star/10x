@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HeroBackground from "../../asset/heroBackground.jpg"; // replace with your image path
+// import HeroBackground from "../../asset/heroBackground.jpg";
+import HeroBackground from "../../asset/teachingBackground.jpg"; 
 import { BoxReveal } from "@/components/magicui/box-reveal";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,7 @@ export default function ScrollHero() {
       heading,
       { y: 0, opacity: 1 },
       {
-        y: window.innerHeight / 2 - heading.offsetHeight / 2 - 100,
+        y: window.innerHeight / 2 - heading.offsetHeight / 2 - 50,
         opacity: 0, // fade out while moving
         scrollTrigger: {
           trigger: parent,
@@ -40,7 +41,7 @@ export default function ScrollHero() {
       secondHeading,
       { y: 0, opacity: 1 },
       {
-        y: window.innerHeight / 2 - heading.offsetHeight / 2,
+        y: window.innerHeight / 2 - heading.offsetHeight / 2 - -50,
         opacity: 0, // final opacity
         keyframes: [
           { opacity: 0.7, ease: "power1.in", duration: 0.7 }, // mid fade
@@ -95,12 +96,16 @@ export default function ScrollHero() {
       {
         y: -150, // move upward more for dramatic fade
         opacity: 0, // fade out completely
-        scale: 1.3,
+        keyframes: [
+          { opacity: 0.7, ease: "power1.in", duration: 0.9 }, // mid fade
+          { opacity: 0, ease: "power1.out", duration: 0.1 } // fade out fully
+        ],
+        scale: 1.7,
         ease: "power1.inOut", // smooth upward drift
         scrollTrigger: {
           trigger: parent,
           start: "top top",
-          end: "+=500", // slightly longer fade
+          end: "+=800", // slightly longer fade
           scrub: true
         }
       }
@@ -128,10 +133,13 @@ export default function ScrollHero() {
           left: 0,
           height: "120px",
           width: "100%",
-          textAlign: "center",
+          textAlign: "center"
         }}
       >
-        <h1 style={{ margin: 0, position: "relative", zIndex: 1 }} className="font-bold font-serif bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent">
+        <h1
+          style={{ margin: 0, position: "relative", zIndex: 1 }}
+          className="font-bold font-serif bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent"
+        >
           Center of Excellence
         </h1>
       </div>
@@ -147,7 +155,7 @@ export default function ScrollHero() {
           width: "100%",
           textAlign: "center",
           zIndex: 20,
-          // backgroundColor: "cadetblue",
+          overflowX:"auto",
           textWrap: "nowrap"
         }}
       >

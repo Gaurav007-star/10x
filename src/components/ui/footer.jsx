@@ -39,7 +39,7 @@ export const Footer = () => {
               alt="logo"
               className="w-[350px] h-auto object-cover"
             />
-            <p className="mt-5 text-[16px] max-[450px]:text-[14px] leading-relaxed w-[50%] max-[1025px]:w-[80%] max-[450px]:w-full">
+            <p className="mt-5 text-[16px] leading-relaxed w-[50%] max-[1025px]:w-[80%] max-[450px]:w-full">
               Empowering the next generation with AI-driven learning. We provide
               accessible, innovative education solutions to prepare learners for
               the future.

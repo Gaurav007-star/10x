@@ -95,7 +95,7 @@ export const Timeline = ({ data = [] }) => {
       </motion.div>
 
       {/* Header (kept outside the observed timeline block so it won't keep dots visible) */}
-      <div className="w-full flex flex-col items-center justify-center px-6 my-20">
+      <div className="w-full flex flex-col items-center justify-center px-6 my-20 max-[1025px]:mb-10">
         <h2 className="w-full text-center max-[450px]:text-[30px] max-[1025px]:text-[60px] text-[60px] font-bold text-primary leading-tight">
           Capabilities in Educational{" "}
           <span className="max-[450px]:text-[30px] max-[1025px]:text-[60px] text-[80px] text-primary">
@@ -111,12 +111,15 @@ export const Timeline = ({ data = [] }) => {
       </div>
 
       {/* TIMELINE: THIS is the element we observe */}
-      <div ref={timelineRef} className="relative max-w-7xl mx-auto pb-20 ">
+      <div
+        ref={timelineRef}
+        className="relative w-[90%] max-[1025px]:w-full max-[450px]:px-4 mx-auto pb-20 "
+      >
         {data.map((item, index) => (
           <div
             key={index}
             ref={(el) => (itemRefs.current[index] = el)}
-            className="flex max-[1025px]:flex-col justify-start pt-10 gap-10 max-[1025px]:gap-5"
+            className="flex max-[1025px]:flex-col justify-start pt-10 gap-10  max-[1025px]:gap-5"
           >
             <div className="min-[1025px]:sticky flex flex-row max-[1025px]:flex-col z-40 items-center top-30 self-start max-w-xs max-[1025px]:max-w-full w-full">
               <h3 className="block text-[40px] max-[450px]:text-[20px] px-15 max-[1025px]:px-5 font-bold text-primary">
@@ -124,7 +127,7 @@ export const Timeline = ({ data = [] }) => {
               </h3>
             </div>
 
-            <div className="relative pl-6 pr-4 m-5 max-[1025px]:m-2 w-full text-secondary-foreground">
+            <div className="relative pl-6 pr-4 m-5 max-[1025px]:px-0 max-[1025px]:m-0 w-full text-secondary-foreground">
               {item.content}
             </div>
           </div>

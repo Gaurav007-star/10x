@@ -7,7 +7,7 @@ import DemoExample from "./DemoExample";
 // title section
 const Horizontal = () => {
   return (
-    <div className="bg-white my-20 max-[1025px]:m-0 ">
+    <div className="bg-white my-20 max-[1025px]:m-0 max-[1025px]:hidden">
       <HorizontalScrollCarousel />
     </div>
   );
