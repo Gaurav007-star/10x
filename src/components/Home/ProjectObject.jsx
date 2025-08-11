@@ -9,12 +9,11 @@ import MatrixTable from "../layout/MatrixTable";
 import Goal10X from "../../asset/Goal10X.png";
 import PulseCircle from "../ui/PulseCircle";
 import TenXLayoutResponsive from "../layout/TenxLayoutResponsive";
-import TenXTeacher from "../ui/TenXTeacher";
 
 const ProjectObject = () => {
   return (
     <Element name="project">
-      <div className="relative w-full h-max flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 my-10 max-[1025px]:my-2">
+      <div className="relative w-full h-max flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 mt-10 max-[1025px]:my-2">
         <h1 className="absolute top-0 w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">10x Teacher Goals</h1>
         <img src={Goal10X} alt="" className="w-full h-full object-cover max-[1025px]:hidden" />
 
@@ -25,7 +24,7 @@ const ProjectObject = () => {
       {/* matrix table */}
       <div className="grid-section overflow-hidden w-full h-max flex flex-col items-center justify-center py-10 max-[450px]:py-0">
         <SparklesText sparklesCount="2">
-          <h1 className="text-[60px] max-[450px]:text-[25px] font-sans text-primary font-semibold my-15 max-[450px]:mb-5 ">
+          <h1 className="text-[60px] max-[450px]:text-[25px] font-sans text-primary font-semibold mt-5 max-[450zpx]:mt-10 max-[1025px]:mb-10 mb-20 max-[450px]:mb-5 ">
             <span className="w-max h-max bg-primary text-secondary px-4 py-6 max-[450px]:p-3 rounded-xl shadow-md">
               CoEAI4Edu
             </span>{" "}

@@ -31,7 +31,7 @@ const Hero = () => {
 
         {/* mobile-responsive hero section */}
         <div className="hero-section-mobile-responsive hidden max-[1025px]:inline-flex flex-col items-center ">
-          <div className="heading-section w-full h-max flex flex-col items-center max-[450px]:leading-8">
+          <div className="heading-section w-full h-max flex flex-col  items-center max-[450px]:leading-8">
             <h1 className="bg-gradient-to-r from-primary-foreground to-primary bg-clip-text text-transparent text-[60px] max-[450px]:text-[30px] font-bold p-2">
               Center of Excellence
             </h1>
@@ -40,7 +40,7 @@ const Hero = () => {
               in AI for Education
             </h2>
           </div>
-          <div className="image-section w-full h-max max-[450px]:px-5 my-5">
+          <div className="image-section w-full h-max max-[450px]:px-5 my-5 max-[450px]:mb-0">
             <img
               src={Background}
               alt="background"

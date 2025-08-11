@@ -45,14 +45,14 @@ const MatrixTable = () => {
 
   return (
     <div className="overflow-hidden max-[1025px]:overflow-auto p-4 cursor-pointer w-[90%] font-serif mx-auto">
-      <table className="w-full h-max border-collapse">
+      <table className="w-full h-max border-collapse table-fixed">
         <thead>
           <tr>
-            <th className="p-2 bg-white"></th>
+            <th className="bg-white w-[120px] h-[60px]"></th>
             {columns.map((col, colIndex) => (
               <motion.th
                 key={colIndex}
-                className="w-[200px] p-2 text-[18px] max-[450px]:text-[12px]"
+                className="w-[120px] h-[60px] p-2 text-[18px] max-[450px]:text-[12px] whitespace-normal overflow-hidden align-middle"
                 animate={{
                   color:
                     hoveredCol === colIndex ||
@@ -78,7 +78,7 @@ const MatrixTable = () => {
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               <motion.th
-                className="p-2 w-[200px] text-[16px] text-left max-[450px]:text-[12px]"
+                className="w-[120px] h-[60px] p-2 text-[16px] text-left max-[450px]:text-[12px] whitespace-normal overflow-hidden align-middle"
                 animate={{
                   color:
                     hoveredRow === rowIndex ||
@@ -115,7 +115,7 @@ const MatrixTable = () => {
                 return (
                   <motion.td
                     key={colIndex}
-                    className="p-2 text-center text-white"
+                    className="w-[120px] h-[60px] p-2 text-center text-white whitespace-normal overflow-hidden align-middle"
                     animate={{
                       backgroundColor:
                         isHovered && applyColor

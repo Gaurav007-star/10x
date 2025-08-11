@@ -28,7 +28,7 @@ export const Footer = () => {
   const date = new Date().getFullYear();
 
   return (
-    <section className="w-full h-[500px] px-[8%]">
+    <section className="w-full h-[500px] max-[1025px]:px-10 px-20 mt-10">
       <div className="w-full h-full flex flex-col justify-between">
         {/* TOP ROW */}
         <div className="flex max-[450px]:flex-col w-full justify-between items-start mt-[50px]">

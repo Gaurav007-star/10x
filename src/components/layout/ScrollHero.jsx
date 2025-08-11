@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import HeroBackground from "../../asset/heroBackground.jpg";
-import HeroBackground from "../../asset/teachingBackground.jpg"; 
+import HeroBackground from "../../asset/elementry.jpg"; 
 import { BoxReveal } from "@/components/magicui/box-reveal";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +44,7 @@ export default function ScrollHero() {
         y: window.innerHeight / 2 - heading.offsetHeight / 2 - -50,
         opacity: 0, // final opacity
         keyframes: [
-          { opacity: 0.7, ease: "power1.in", duration: 0.7 }, // mid fade
+          { opacity: 0.9, ease: "power1.in", duration: 0.7 }, // mid fade
           { opacity: 0, ease: "power1.out", duration: 0.3 } // fade out fully
         ],
         scrollTrigger: {

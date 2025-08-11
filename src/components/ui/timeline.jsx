@@ -113,7 +113,7 @@ export const Timeline = ({ data = [] }) => {
       {/* TIMELINE: THIS is the element we observe */}
       <div
         ref={timelineRef}
-        className="relative w-[90%] max-[1025px]:w-full max-[450px]:px-4 mx-auto pb-20 "
+        className="relative w-[90%] max-[1025px]:w-full max-[450px]:px-4 mx-auto pb-10 "
       >
         {data.map((item, index) => (
           <div
