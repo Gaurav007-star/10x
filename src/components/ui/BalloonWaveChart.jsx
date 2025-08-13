@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import GraphVideo from "../../asset/waveform.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 

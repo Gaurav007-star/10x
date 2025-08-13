@@ -10,6 +10,8 @@ import Background from "../../asset/mainBackground.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+
+  // rocket animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(

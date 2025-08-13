@@ -23,8 +23,8 @@ const cards = [
     props: {
       videoLink: videoLink,
       thumbnail: videoThumbLink,
-      title: "BloomSphere AI",
-      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
+      title: "Demo ai",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae reprehenderit quaerat molestias ad, natus aliquam error harum totam debitis! Facere.",
       link: "https://bloomfront-production.up.railway.app/"
     },
     id: 2
@@ -33,8 +33,8 @@ const cards = [
     props: {
       imgLink:
         "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
-      title: "BloomSphere AI",
-      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
+      title: "Demo ai",
+      desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam recusandae tenetur illo commodi, ratione asperiores quos id, ut voluptates numquam, dignissimos inventore distinctio quam voluptas ea! Facilis, praesentium illo.",
       link: "https://bloomfront-production.up.railway.app/"
     },
     id: 3
@@ -54,7 +54,7 @@ const Demo = () => {
       {/* demo-section-for-mobile-responsive */}
       <div className="demo-section w-full h-max flex flex-col gap-2 my-5 min-[1025px]:hidden">
         {cards.map((item, i) => {
-          return <DemoExample key={i} {...item.props}/>;
+          return <DemoExample key={i} {...item.props} />;
         })}
       </div>
     </Element>

@@ -8,8 +8,8 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router";
 
 const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
-  console.log(imgLink,title);
-  
+  console.log(imgLink, title);
+
   const navigate = useNavigate();
 
   return (
@@ -47,18 +47,19 @@ const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
       {/* right-section */}
       <div className="right w-[40%] max-[450px]:w-full h-full max-[450px]:h-[50%] flex flex-col bg-primary text-white rounded-3xl p-4">
         <div className="top-section w-full h-[80%] flex flex-col gap-2">
-          <h1 className="text-[42px] max-[450px]:text-[25px]">{title}</h1>
+          <h1 className="text-[42px] max-[1025px]:text-[30px] max-[450px]:text-[25px]">{title}</h1>
           <p className="max-[400px]:text-[16px] max-[450px]:text-[18px] text-wrap truncate">
             {desc}
           </p>
         </div>
         <div className="button-section w-full h-[20%] max-[450px]:mt-2 flex items-center justify-center">
-          <Button
-            className={`w-[90%] h-[45px] max-[450px]:h-[35px] hover:bg-accent-foreground hover:text-secondary bg-accent rounded-4xl text-accent-foreground hover:scale-105 `}
-            
-          >
-           <a href={link} target="_blank">View Demo</a> 
-          </Button>
+          <a href={link} target="_blank" className="w-[90%] h-max">
+            <Button
+              className={`w-full h-[45px] max-[450px]:h-[35px] hover:bg-accent-foreground hover:text-secondary bg-accent rounded-4xl text-accent-foreground hover:scale-105 `}
+            >
+              View Demo
+            </Button>
+          </a>
         </div>
       </div>
     </div>
