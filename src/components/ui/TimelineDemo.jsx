@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BulletPoint from "../../asset/capabilities/bullet-point.png";
 import { Timeline } from "./timeline";
 import Pedagogy01 from "../../asset/capabilities/pedagogy01.jpg";
@@ -15,6 +15,7 @@ import educationSld01 from "../../asset/capabilities/educationSld01.jpg";
 import educationSld02 from "../../asset/capabilities/educationSld02.jpg";
 import educationCenter01 from "../../asset/capabilities/educationCenter01.jpg";
 import educationCenter02 from "../../asset/capabilities/educationCenter02.jpg";
+import ImageModal from "./ImageModal";
 
 const pedagogy = [
   "Developed the e-Shikshan tool – an open-source, web-based Pedagogy Framework Tool.",
@@ -79,230 +80,165 @@ const education_center = [
   "DIY Lab enables students to build, design, and 3D-print"
 ];
 
-const data = [
-  {
-    title: "Pedagogy",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {pedagogy.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={Pedagogy01}
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-auto rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] "
-          />
-          <img
-            src={Pedagogy02}
-            alt="startup template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Content Creation",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {contentCreation.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={contentCreation01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={contentCreation02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Curriculum & Accreditation",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {curriculum.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={curriculum01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={curriculum02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Content Delivery",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {contentDelivery.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={contentDelivery01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={contentDelivery02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Teacher Training",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {teacherTraining.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={teacherTrining01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={teacherTrining02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Education in SLD",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {education_in_sld.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={educationSld01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={educationSld02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Education Center",
-    content: (
-      <div>
-        <div className="mb-8 text-[18px] max-[1025px]:text-[22px] max-[450px]:text-[16px] font-medium leading-9">
-          {education_center.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
-              <span className="leading-[1.7]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
-          <img
-            src={educationCenter01}
-            alt="hero template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-          <img
-            src={educationCenter02}
-            alt="feature template"
-            width={500}
-            height={500}
-            className="h-20 max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-          />
-        </div>
-      </div>
-    )
-  }
-];
-
 export function TimeLineDemo() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const renderImage = (src, alt) => (
+    <img
+      src={src}
+      alt={alt}
+      width={500}
+      height={500}
+      className="h-auto max-[450px]:h-fit w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] cursor-pointer"
+      onClick={() => setSelectedImage({ src, alt })}
+    />
+  );
+
+  const data = [
+    {
+      title: "Pedagogy",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {pedagogy.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(Pedagogy01, "Pedagogy Image 1")}
+            {renderImage(Pedagogy02, "Pedagogy Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Content Creation",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {contentCreation.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(contentCreation01, "Content Creation Image 1")}
+            {renderImage(contentCreation02, "Content Creation Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Curriculum & Accreditation",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {curriculum.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(curriculum01, "Curriculum Image 1")}
+            {renderImage(curriculum02, "Curriculum Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Content Delivery",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {contentDelivery.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(contentDelivery01, "Content Delivery Image 1")}
+            {renderImage(contentDelivery02, "Content Delivery Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Teacher Training",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {teacherTraining.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(teacherTrining01, "Teacher Training Image 1")}
+            {renderImage(teacherTrining02, "Teacher Training Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Education in SLD",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {education_in_sld.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(educationSld01, "Education in SLD Image 1")}
+            {renderImage(educationSld02, "Education in SLD Image 2")}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Education Center",
+      content: (
+        <div>
+          <div className="mb-8 text-[18px] font-medium leading-9">
+            {education_center.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <img src={BulletPoint} alt="icon" className="w-5 h-5 mt-1" />
+                <span className="leading-[1.7]">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-4 max-[450px]:grid-cols-1">
+            {renderImage(educationCenter01, "Education Center Image 1")}
+            {renderImage(educationCenter02, "Education Center Image 2")}
+          </div>
+        </div>
+      )
+    }
+  ];
+
   return (
     <div className="relative w-full overflow-clip">
       <Timeline data={data} />
+      <ImageModal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        imageSrc={selectedImage?.src}
+        alt={selectedImage?.alt}
+      />
     </div>
   );
 }

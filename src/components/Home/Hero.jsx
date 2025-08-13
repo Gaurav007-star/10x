@@ -50,6 +50,8 @@ const Hero = () => {
               in AI for Education
             </h2>
           </div>
+
+          {/* main-background-image */}
           <div className="image-section w-full h-max max-[450px]:px-5 my-5 max-[450px]:mb-0">
             <img
               src={Background}
@@ -75,7 +77,7 @@ const Hero = () => {
                 src="https://lottie.host/b1c78a29-0db1-4d5a-bda7-1d84e66558a7/TAEHN0QlUz.lottie"
                 loop
                 autoplay
-                className="rocket absolute w-[80px] h-[80px] max-[450px]:hidden"
+                className="rocket absolute w-[80px] h-[80px] max-[1025px]:hidden"
               />
             </div>
 

@@ -28,7 +28,6 @@ export const Timeline = ({ data = [] }) => {
     return () => obs.disconnect();
   }, []);
 
-  // Update activeIndex based on which item is nearest center of viewport
   useEffect(() => {
     const onScroll = () => {
       if (isScrollingToItem) return;
@@ -127,7 +126,9 @@ export const Timeline = ({ data = [] }) => {
               </h3>
             </div>
 
-            <div className="relative pl-6 pr-4 m-5 max-[1025px]:px-0 max-[1025px]:m-0 w-full text-secondary-foreground">
+            <div
+              className="relative pl-6 pr-4 m-5 max-[1025px]:px-0 max-[1025px]:m-0 w-full text-secondary-foreground"
+            >
               {item.content}
             </div>
           </div>
