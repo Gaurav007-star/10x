@@ -19,26 +19,26 @@ const cards = [
     },
     id: 1
   },
-  {
-    props: {
-      videoLink: videoLink,
-      thumbnail: videoThumbLink,
-      title: "Demo ai",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae reprehenderit quaerat molestias ad, natus aliquam error harum totam debitis! Facere.",
-      link: "https://bloomfront-production.up.railway.app/"
-    },
-    id: 2
-  },
-  {
-    props: {
-      imgLink:
-        "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
-      title: "Demo ai",
-      desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam recusandae tenetur illo commodi, ratione asperiores quos id, ut voluptates numquam, dignissimos inventore distinctio quam voluptas ea! Facilis, praesentium illo.",
-      link: "https://bloomfront-production.up.railway.app/"
-    },
-    id: 3
-  }
+  // {
+  //   props: {
+  //     videoLink: videoLink,
+  //     thumbnail: videoThumbLink,
+  //     title: "Demo ai",
+  //     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae reprehenderit quaerat molestias ad, natus aliquam error harum totam debitis! Facere.",
+  //     link: "https://bloomfront-production.up.railway.app/"
+  //   },
+  //   id: 2
+  // },
+  // {
+  //   props: {
+  //     imgLink:
+  //       "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
+  //     title: "Demo ai",
+  //     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam recusandae tenetur illo commodi, ratione asperiores quos id, ut voluptates numquam, dignissimos inventore distinctio quam voluptas ea! Facilis, praesentium illo.",
+  //     link: "https://bloomfront-production.up.railway.app/"
+  //   },
+  //   id: 3
+  // }
 ];
 
 // Main-Component

@@ -21,7 +21,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["30%", "-30%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["30%", "0%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
@@ -76,24 +76,24 @@ const cards = [
     },
     id: 1
   },
-  {
-    component: DemoExample,
-    props: {
-      videoLink: videoLink,
-      thumbnail: aiImage,
-      title: "Ai Demo",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
-    },
-    id: 2
-  },
-  {
-    component: DemoExample,
-    props: {
-      imgLink:
-        "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
-      title: "Ai Demo",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
-    },
-    id: 3
-  }
+  // {
+  //   component: DemoExample,
+  //   props: {
+  //     videoLink: videoLink,
+  //     thumbnail: aiImage,
+  //     title: "Ai Demo",
+  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
+  //   },
+  //   id: 2
+  // },
+  // {
+  //   component: DemoExample,
+  //   props: {
+  //     imgLink:
+  //       "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
+  //     title: "Ai Demo",
+  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
+  //   },
+  //   id: 3
+  // }
 ];
