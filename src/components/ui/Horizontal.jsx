@@ -3,6 +3,7 @@ import { useRef } from "react";
 import image from "../../asset/heroBackground.jpg";
 import aiImage from "../../asset/ai.jpg";
 import DemoExample from "./DemoExample";
+import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 
 // title section
 const Horizontal = () => {
@@ -67,19 +68,31 @@ const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
 const cards = [
   {
     component: DemoExample,
-    props: { imgLink: image },
+    props: {
+      imgLink: bloomSphere,
+      title: "BloomSphere AI",
+      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
+      link: "https://bloomfront-production.up.railway.app/"
+    },
     id: 1
   },
   {
     component: DemoExample,
-    props: { videoLink: videoLink, thumbnail: aiImage },
+    props: {
+      videoLink: videoLink,
+      thumbnail: aiImage,
+      title: "Ai Demo",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
+    },
     id: 2
   },
   {
     component: DemoExample,
     props: {
       imgLink:
-        "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg"
+        "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
+      title: "Ai Demo",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
     },
     id: 3
   }

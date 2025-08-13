@@ -5,8 +5,13 @@ import { MdSlowMotionVideo } from "react-icons/md";
 import DialogContentComponent from "./DialogContentComponent";
 import { Button } from "./button";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router";
 
-const DemoExample = ({ imgLink, videoLink, thumbnail }) => {
+const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
+  console.log(imgLink,title);
+  
+  const navigate = useNavigate();
+
   return (
     <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[400px] max-[400px]:h-[80vh] max-[450px]:h-[60vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5 ">
       {/* left-section */}
@@ -42,18 +47,17 @@ const DemoExample = ({ imgLink, videoLink, thumbnail }) => {
       {/* right-section */}
       <div className="right w-[40%] max-[450px]:w-full h-full max-[450px]:h-[50%] flex flex-col bg-primary text-white rounded-3xl p-4">
         <div className="top-section w-full h-[80%] flex flex-col gap-2">
-          <h1 className="text-[50px] max-[450px]:text-[25px]">Title</h1>
+          <h1 className="text-[42px] max-[450px]:text-[25px]">{title}</h1>
           <p className="max-[400px]:text-[16px] max-[450px]:text-[18px] text-wrap truncate">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-            quibusdam fugit quis ea iure odit, atque aspernatur amet quod
-            laboriosam?
+            {desc}
           </p>
         </div>
         <div className="button-section w-full h-[20%] max-[450px]:mt-2 flex items-center justify-center">
           <Button
             className={`w-[90%] h-[45px] max-[450px]:h-[35px] hover:bg-accent-foreground hover:text-secondary bg-accent rounded-4xl text-accent-foreground hover:scale-105 `}
+            
           >
-            Know more
+           <a href={link} target="_blank">View Demo</a> 
           </Button>
         </div>
       </div>

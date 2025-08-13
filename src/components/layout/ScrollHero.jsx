@@ -2,19 +2,19 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import HeroBackground from "../../asset/heroBackground.jpg";
-import HeroBackground from "../../asset/elementry.jpg"; 
+import HeroBackground from "../../asset/mainBackground.jpg"; 
 import { BoxReveal } from "@/components/magicui/box-reveal";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollHero() {
   const headingRef = useRef(null);
-  const secondaHeadingRef = useRef(null);
+  const secondHeadingRef = useRef(null);
   const imageRef = useRef(null);
   const parentRef = useRef(null);
 
   useEffect(() => {
     const heading = headingRef.current;
-    const secondHeading = secondaHeadingRef.current;
+    const secondHeading = secondHeadingRef.current;
     const h1 = heading.querySelectorAll("h1");
     const h2 = secondHeading.querySelectorAll("h1");
     const image = imageRef.current;
@@ -41,8 +41,9 @@ export default function ScrollHero() {
       secondHeading,
       { y: 0, opacity: 1 },
       {
-        y: window.innerHeight / 2 - heading.offsetHeight / 2 - -50,
+        y: window.innerHeight / 2 - heading.offsetHeight / 2 - -300,
         opacity: 0, // final opacity
+        scale:1.1,
         keyframes: [
           { opacity: 0.9, ease: "power1.in", duration: 0.7 }, // mid fade
           { opacity: 0, ease: "power1.out", duration: 0.3 } // fade out fully
@@ -50,7 +51,7 @@ export default function ScrollHero() {
         scrollTrigger: {
           trigger: parent,
           start: "top top",
-          end: "+=500",
+          end: "+=800",
           scrub: true
         }
       }
@@ -95,12 +96,12 @@ export default function ScrollHero() {
       { y: 0, opacity: 1, scale: 1 },
       {
         y: -150, // move upward more for dramatic fade
-        opacity: 0, // fade out completely
+        opacity: 0.5, // fade out completely
         keyframes: [
           { opacity: 0.7, ease: "power1.in", duration: 0.9 }, // mid fade
           { opacity: 0, ease: "power1.out", duration: 0.1 } // fade out fully
         ],
-        scale: 1.7,
+        scale:2,
         ease: "power1.inOut", // smooth upward drift
         scrollTrigger: {
           trigger: parent,
@@ -146,7 +147,7 @@ export default function ScrollHero() {
 
       {/* Second heading */}
       <div
-        ref={secondaHeadingRef}
+        ref={secondHeadingRef}
         style={{
           position: "absolute",
           top: "130px",
