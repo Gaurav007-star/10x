@@ -116,6 +116,7 @@ export const Footer = () => {
           <a
             href="https://www.techscooper.com/"
             className="text-sky-500 no-underline hover:underline"
+            target="_blank"
           >
             TechScooper
           </a>

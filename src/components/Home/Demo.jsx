@@ -5,9 +5,9 @@ import Horizontal from "../ui/Horizontal";
 import DemoExample from "../ui/DemoExample";
 import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 
-const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
-const videoThumbLink =
-  "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+// const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
+// const videoThumbLink =
+//   "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const cards = [
   {
