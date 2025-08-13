@@ -3,19 +3,20 @@ import { useRef } from "react";
 import image from "../../asset/heroBackground.jpg";
 import aiImage from "../../asset/ai.jpg";
 import DemoExample from "./DemoExample";
-import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 
 // title section
-const Horizontal = () => {
+const Horizontal = ({cards}) => {
+  console.log(cards);
+  
   return (
     <div className="bg-white mb-10 max-[1025px]:m-0 max-[1025px]:hidden">
-      <HorizontalScrollCarousel />
+      <HorizontalScrollCarousel cards={cards}/>
     </div>
   );
 };
 
 // main outer component
-const HorizontalScrollCarousel = () => {
+const HorizontalScrollCarousel = ({cards}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef
@@ -40,8 +41,7 @@ const HorizontalScrollCarousel = () => {
 };
 
 const Card = ({ card }) => {
-  const Item = card.component;
-
+  
   return (
     <div
       key={card.id}
@@ -56,44 +56,45 @@ const Card = ({ card }) => {
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
       <div className="absolute w-full h-full inset-0 z-10 flex gap-2 rounded-xl ">
-        <Item {...card.props} />
+        <DemoExample {...card.props} />
       </div>
     </div>
   );
 };
 
 export default Horizontal;
-const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
 
-const cards = [
-  {
-    component: DemoExample,
-    props: {
-      imgLink: bloomSphere,
-      title: "BloomSphere AI",
-      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
-      link: "https://bloomfront-production.up.railway.app/"
-    },
-    id: 1
-  },
-  // {
-  //   component: DemoExample,
-  //   props: {
-  //     videoLink: videoLink,
-  //     thumbnail: aiImage,
-  //     title: "Ai Demo",
-  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
-  //   },
-  //   id: 2
-  // },
-  // {
-  //   component: DemoExample,
-  //   props: {
-  //     imgLink:
-  //       "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
-  //     title: "Ai Demo",
-  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
-  //   },
-  //   id: 3
-  // }
-];
+// -------------------------------------------------------------------
+// const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
+// const cards = [
+//   {
+//     component: DemoExample,
+//     props: {
+//       imgLink: bloomSphere,
+//       title: "BloomSphere AI",
+//       desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
+//       link: "https://bloomfront-production.up.railway.app/"
+//     },
+//     id: 1
+//   },
+//   // {
+//   //   component: DemoExample,
+//   //   props: {
+//   //     videoLink: videoLink,
+//   //     thumbnail: aiImage,
+//   //     title: "Ai Demo",
+//   //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
+//   //   },
+//   //   id: 2
+//   // },
+//   // {
+//   //   component: DemoExample,
+//   //   props: {
+//   //     imgLink:
+//   //       "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
+//   //     title: "Ai Demo",
+//   //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum nobis explicabo possimus minus temporibus ipsam mollitia molestiae, nemo eius."
+//   //   },
+//   //   id: 3
+//   // }
+// ];

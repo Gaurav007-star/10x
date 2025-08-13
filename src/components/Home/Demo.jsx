@@ -46,7 +46,7 @@ const Demo = () => {
   // Start at middle
   return (
     <Element name="demo">
-      <Horizontal />
+      <Horizontal cards={cards}/>
 
       <h1 className="w-full h-max text-center text-[50px] font-bold text-primary min-[1025px]:hidden">
         Demo
