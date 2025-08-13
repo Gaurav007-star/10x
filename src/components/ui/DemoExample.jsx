@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
 
   return (
-    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[400px] max-[400px]:h-[80vh] max-[450px]:h-[60vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5 ">
+    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[400px] max-[400px]:h-[80vh] max-[450px]:h-[70vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5 ">
       {/* left-section */}
       <div className="left w-[55%] max-[450px]:w-full h-full max-[450px]:h-[50%] overflow-hidden">
         {imgLink && (
@@ -44,7 +44,7 @@ const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
       <div className="right w-[45%] max-[450px]:w-full h-full max-[450px]:h-[50%] flex flex-col bg-primary text-white rounded-3xl p-4">
         <div className="top-section w-full h-[80%] flex flex-col gap-2">
           <h1 className="text-[42px] max-[1025px]:text-[30px] max-[450px]:text-[25px]">{title}</h1>
-          <p className="max-[400px]:text-[16px] max-[450px]:text-[18px] text-wrap truncate">
+          <p className="max-[450px]:text-[20px] max-[1025px]:text-[24px] text-wrap max-[1025px]:overflow-y-scroll">
             {desc}
           </p>
         </div>
