@@ -9,14 +9,14 @@ import { motion } from "motion/react";
 const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
 
   return (
-    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[400px] max-[400px]:h-[80vh] max-[450px]:h-[70vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5 ">
+    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[400px] max-[400px]:h-[80vh] max-[450px]:h-[70vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5">
       {/* left-section */}
-      <div className="left w-[55%] max-[450px]:w-full h-full max-[450px]:h-[50%] overflow-hidden">
+      <div className="left rounded-xl w-[55%] max-[450px]:w-full h-full max-[450px]:h-[50%] overflow-hidden">
         {imgLink && (
           <img
             src={imgLink}
             alt="Demo"
-            className="w-full h-full rounded-xl object-cover object-center"
+            className="w-full h-auto rounded-xl object-cover object-center"
           />
         )}
 

@@ -4,6 +4,7 @@ import { Element } from "react-scroll";
 import Horizontal from "../ui/Horizontal";
 import DemoExample from "../ui/DemoExample";
 import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
+import OpenObe from "../../asset/demo/OpenObe.jpg";
 
 // const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
 // const videoThumbLink =
@@ -19,6 +20,15 @@ const cards = [
     },
     id: 1
   },
+  {
+    props: {
+      imgLink: OpenObe,
+      title: "OpenOBE",
+      desc: "This tool will be a comprehensive, open-source, web-based platform that supports educational institutions, faculty, and accreditation bodies in implementing and sustaining Outcome-Based Education (OBE). It will enable the end-to-end lifecycle of curriculum design, review, and monitoring, ensuring alignment with national and international standards such as NBA, NAAC, ABET, and Washington Accord.",
+      link: "https://ide.iitkgp.ac.in/Pedagogy1/pedagogy_main.jsp"
+    },
+    id: 1
+  },
   // {
   //   props: {
   //     videoLink: videoLink,
@@ -29,16 +39,6 @@ const cards = [
   //   },
   //   id: 2
   // },
-  // {
-  //   props: {
-  //     imgLink:
-  //       "https://images.pexels.com/photos/8728223/pexels-photo-8728223.jpeg",
-  //     title: "Demo ai",
-  //     desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam recusandae tenetur illo commodi, ratione asperiores quos id, ut voluptates numquam, dignissimos inventore distinctio quam voluptas ea! Facilis, praesentium illo.",
-  //     link: "https://bloomfront-production.up.railway.app/"
-  //   },
-  //   id: 3
-  // }
 ];
 
 // Main-Component
