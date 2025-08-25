@@ -1,11 +1,11 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import KgpLogo from "../../asset/kgp-icon.png";
-import MainLogo from "../../asset/mainLogo.png";
+import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
 
 import { Link } from "react-router";
 const defaultAddresses = [
-  { id: "email", title: "info@10x-teacher.com" },
+  { id: "email", title: "info@dashabhuja.com" },
   { id: "phone", title: "+91 - 3222 - 283754, 284756" },
   {
     id: "address",
@@ -75,7 +75,7 @@ export const Footer = () => {
               ))}
             </div>
 
-             <div className="flex gap-4 mt-5 text-xl max-[450px]:text-2xl min-[450px]:hidden">
+            <div className="flex gap-4 mt-5 text-xl max-[450px]:text-2xl min-[450px]:hidden">
               {defaultSocialLinks.map((social, idx) => (
                 <a
                   key={idx}
@@ -112,14 +112,16 @@ export const Footer = () => {
               Legal disclaimer
             </Link>
           </div>
-          ©{date} 10x Teacher CoEAI4Edu | All rights reserved | Designed by{" "}
-          <a
-            href="https://www.techscooper.com/"
-            className="text-sky-500 no-underline hover:underline"
-            target="_blank"
-          >
-            TechScooper
-          </a>
+          <h1 className="text-[18px]">
+            ©{date} Dashabhuja 10x Teacher | All rights reserved | Designed by
+            <a
+              href="https://www.techscooper.com/"
+              className="text-sky-500 no-underline hover:underline"
+              target="_blank"
+            >
+              TechScooper
+            </a>
+          </h1>
         </div>
       </div>
     </section>

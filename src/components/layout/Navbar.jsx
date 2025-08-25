@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import kgpIcon from "../../asset/kgp-icon.png";
-import MainLogo from "../../asset/mainLogo.png";
+import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState({
@@ -28,7 +28,7 @@ const Navbar = () => {
         <img
           src={MainLogo}
           alt="logo"
-          className="h-[60px] max-[1025px]:h-[50px] max-[450px]:h-[30px] w-fit object-cover"
+          className="h-[80px] max-[1025px]:h-[50px] max-[450px]:h-[30px] w-fit object-cover"
         />
       </div>
 
