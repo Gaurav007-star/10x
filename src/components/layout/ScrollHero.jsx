@@ -169,7 +169,7 @@ export default function ScrollHero() {
           }}
           className="font-bold font-serif"
         >
-          in AI for Education
+          AI for Education
         </h1>
       </div>
 

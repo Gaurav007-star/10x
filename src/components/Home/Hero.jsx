@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import ScrollHero from "../layout/ScrollHero";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Background from "../../asset/mainBackground.jpg";
+import ScrollHero from "../layout/ScrollHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +47,7 @@ const Hero = () => {
             </h1>
 
             <h2 className="text-[50px] max-[450px]:text-[30px] px-2">
-              in AI for Education
+              AI for Education
             </h2>
           </div>
 

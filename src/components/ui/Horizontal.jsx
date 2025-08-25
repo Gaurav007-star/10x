@@ -6,8 +6,7 @@ import DemoExample from "./DemoExample";
 
 // title section
 const Horizontal = ({cards}) => {
-  console.log(cards);
-  
+
   return (
     <div className="bg-white mb-10 max-[1025px]:m-0 max-[1025px]:hidden">
       <HorizontalScrollCarousel cards={cards}/>
@@ -25,9 +24,9 @@ const HorizontalScrollCarousel = ({cards}) => {
   const x = useTransform(scrollYProgress, [0, 1], ["30%", "-30%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex flex-col h-max items-center justify-center overflow-hidden">
-        <h1 className="font-semibold w-full h-max flex items-center justify-center text-[100px] text-primary mt-5 mb-10">
+        <h1 className="font-semibold w-full h-max flex items-center justify-center text-[100px] text-primary mb-10">
           <span>Demo</span>
         </h1>
         <motion.div style={{ x }} className="flex gap-14 ">

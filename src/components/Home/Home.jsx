@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import Navbar from "../layout/Navbar";
+import React from "react";
 import Hero from "./Hero";
 import ProjectObject from "./ProjectObject";
 import Capabilities from "./Capabilities";
 import Demo from "./Demo";
 import { Footer } from "../ui/footer";
+import Navbar from "../layout/Navbar";
 
 const Home = () => {
   // useEffect(() => {
@@ -16,8 +16,8 @@ const Home = () => {
       <Navbar />
       <Hero />
       <ProjectObject />
-      <Capabilities />
       <Demo />
+      <Capabilities />
       <Footer/>
     </div>
   );
