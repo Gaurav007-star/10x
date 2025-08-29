@@ -32,12 +32,12 @@ const PartnersData = [
     logos: [
       { name: "Telangana state", logo: Logo01 },
       { name: "Andhra Pradesh state", logo: Logo02 },
-      { name: "India AI Mission", logo: Logo03 },
+      // { name: "India AI Mission", logo: Logo03 },
       { name: "NCERT", logo: Logo04 },
       { name: "WB state", logo: Logo05 },
       { name: "KVS", logo: Logo06 },
-      { name: "Jharkhand", logo: Logo07 },
-      { name: "Odisha", logo: Logo08 }
+      // { name: "Jharkhand", logo: Logo07 },
+      // { name: "Odisha", logo: Logo08 }
     ]
   },
   {
@@ -48,12 +48,12 @@ const PartnersData = [
       { name: "Microsoft", logo: Logo11 },
       { name: "EKHO Foundations: Rocket Learning", logo: Logo12 },
       { name: "Central Square Foundation", logo: Logo13 },
-      {
-        name: "Centre for Research in Schemes and Policies (CRISP)",
-        logo: Logo14
-      },
-      { name: "UN global compact", logo: Logo15 },
-      { name: "JPAL South Asia", logo: Logo16 }
+      // {
+      //   name: "Centre for Research in Schemes and Policies (CRISP)",
+      //   logo: Logo14
+      // },
+      // { name: "UN global compact", logo: Logo15 },
+      // { name: "JPAL South Asia", logo: Logo16 }
     ]
   },
   {
@@ -63,9 +63,9 @@ const PartnersData = [
       { name: "CL educate", logo: Logo18 },
       { name: "DEXIT", logo: Logo19 },
       { name: "EduVerse", logo: Logo20 },
-      { name: "Filo", logo: Logo21 },
+      // { name: "Filo", logo: Logo21 },
       { name: "Meraki Labs", logo: Logo22 },
-      { name: "The School of AI", logo: Logo23 }
+      // { name: "The School of AI", logo: Logo23 }
     ]
   },
   {
@@ -80,15 +80,17 @@ const PartnersData = [
 
 const Partners = () => {
   return (
-    <div className="w-full h-max pl-[10vw] my-10">
-      <h1 className="w-full h-max text-[60px] text-primary text-center font-semibold pr-[10vw]">
+    <div className="w-full h-max px-[10vw] my-10">
+      <h1 className="w-full h-max text-[60px] text-primary text-center font-semibold">
         Partners
       </h1>
       {PartnersData.map((item) => {
         return (
-          <div className="box flex flex-col gap-4 my-6">
-            <h1 className="text-[30px] font-medium text-primary flex items-center gap-1">{item.title}<IoMdArrowForward/></h1>
-            <div className="logo-section flex flex-wrap gap-4 w-full ">
+          <div className="box flex flex-col items-center justify-center gap-4 my-10">
+            <h1 className="text-[30px] w-full text-center font-medium text-primary ">
+              {item.title}
+            </h1>
+            <div className="logo-section flex flex-wrap justify-center gap-4 w-full ">
               {item.logos.map((logo) => {
                 return (
                   <img
