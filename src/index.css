@@ -199,3 +199,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  .list_hidden_scrollbar {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .list_hidden_scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

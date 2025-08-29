@@ -5,6 +5,8 @@ import Capabilities from "./Capabilities";
 import Demo from "./Demo";
 import { Footer } from "../ui/footer";
 import Navbar from "../layout/Navbar";
+import PieChartCard from "../layout/PieChart";
+import Faq from "../Team/Member";
 
 const Home = () => {
   // useEffect(() => {
@@ -16,6 +18,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <ProjectObject />
+      <PieChartCard/>
       <Demo />
       <Capabilities />
       <Footer/>

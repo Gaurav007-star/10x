@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router";
 import kgpIcon from "../../asset/kgp-icon.png";
 import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
 
 const Navbar = () => {
   const [active, setActive] = useState({
-    hero: true,
-    project: false,
+    project: true,
     capabilities: false,
-    demo: false
+    demo: false,
+    stakeholder: false
   });
 
   const activeLinkHandler = (e) => {
     const id = e.target.id;
     setActive({
-      hero: id === "hero",
+      stakeholder: id === "stakeholder",
       project: id === "project",
       capabilities: id === "capabilities",
       demo: id === "demo"
     });
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="navbar w-full h-max flex items-center justify-between py-5 max-[450px]:py-5 max-[1025px]:py-8 px-10 max-[450px]:px-5">
@@ -29,23 +32,12 @@ const Navbar = () => {
           src={MainLogo}
           alt="logo"
           className="h-[80px] max-[1025px]:h-[50px] max-[450px]:h-[30px] w-fit object-cover"
+          onClick={() => navigate("/")}
         />
       </div>
 
       {/* link-section */}
       <div className="right max-[1025px]:hidden link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
-        <Link
-          to="hero"
-          id="hero"
-          smooth={true}
-          duration={900}
-          onClick={activeLinkHandler}
-          className={`${
-            active.hero ? "text-primary" : ""
-          } text-[20px] hover:scale-105 transition-transform duration-200`}
-        >
-          Home
-        </Link>
         <Link
           to="project"
           id="project"
@@ -56,7 +48,7 @@ const Navbar = () => {
             active.project ? "text-primary" : ""
           } text-[20px] hover:scale-105 transition-transform duration-200`}
         >
-          Project Objective
+          Project Vertical
         </Link>
         <Link
           to="capabilities"
@@ -70,6 +62,22 @@ const Navbar = () => {
         >
           Capabilities
         </Link>
+
+        <NavLink to={"/technology"}>Technology</NavLink>
+
+        <Link
+          to="stakeholder"
+          id="stakeholder"
+          smooth={true}
+          duration={900}
+          onClick={activeLinkHandler}
+          className={`${
+            active.demo ? "text-primary" : ""
+          } text-[20px] hover:scale-105 transition-transform duration-200`}
+        >
+          Stakeholder
+        </Link>
+
         <Link
           to="demo"
           id="demo"
@@ -82,6 +90,9 @@ const Navbar = () => {
         >
           Demo
         </Link>
+
+        <NavLink to={"/team"}>Team</NavLink>
+
         <img
           src={kgpIcon}
           alt="kgp/logo"
@@ -97,9 +108,10 @@ export default Navbar;
 
 // Sidebar part
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { useNavigate } from "react-router";
 
 const MenuSidebarComponent = () => {
-    const [active, setActive] = useState({
+  const [active, setActive] = useState({
     hero: true,
     project: false,
     capabilities: false,
