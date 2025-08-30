@@ -101,8 +101,8 @@ const Hero = () => {
               </TypingAnimation>
             </div>
 
-            <ul className="w-full h-[100px] max-[1025px]:h-[200px] max-[450px]:h-max flex flex-col items-start text-[20px] text-secondary-foreground font-medium text-wrap truncate">
-              <p className="flex items-start gap-3 text-secondary-foreground text-[16px] ">
+            <ul className="w-full h-[120px] max-[1025px]:h-[200px] max-[450px]:h-max flex flex-col items-start text-[20px] text-secondary-foreground font-medium text-wrap truncate">
+              <p className="flex items-start gap-3 text-secondary-foreground text-[16px]">
                 We strive to transform education by integrating AI into everyday
                 teaching and learning. We create tools and content that make
                 lessons engaging, personalized, and accessible for all students.

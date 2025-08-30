@@ -44,7 +44,7 @@ const cards = [
         "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN?autoplay=1&mute=1&controls=0",
       thumbnail: merakilabs,
       title: "Guided Problem Solving with Error Identification - Meraki Labs",
-      desc: "Understanding Energy and Momentum in Spring Systems which idenfies mistakes in student provided solution and guide towards the solution."
+      desc: "Understanding Energy and Momentum in Spring Systems which identifies mistakes in student provided solution and guide towards the solution."
     },
     id: 4
   }

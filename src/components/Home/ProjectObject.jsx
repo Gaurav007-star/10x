@@ -20,7 +20,7 @@ const ProjectObject = () => {
         <img
           src={Goal10X}
           alt=""
-          className="w-full h-full object-cover max-[1025px]:hidden"
+          className="w-full h-full object-contain max-[1025px]:hidden"
         />
 
         {/* This layout is for mobile-responsive where we show options in stack */}
