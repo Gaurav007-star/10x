@@ -10,6 +10,7 @@ import Faq from "../Team/Member";
 import Stakeholder from "./Stakeholder";
 import { useLocation, useNavigate } from "react-router";
 import { scroller } from "react-scroll";
+import BackToTop from "../ui/BcaktoTop";
 const Home = () => {
   // useEffect(() => {
   //   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,6 +42,7 @@ const Home = () => {
       <Demo />
       <Capabilities />
       <Footer />
+      <BackToTop/>
     </div>
   );
 };

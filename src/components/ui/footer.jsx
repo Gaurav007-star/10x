@@ -112,7 +112,6 @@ export const Footer = () => {
             >
               Legal disclaimer
             </Link>
-            <BackToTop/>
           </div>
           <h1 className="text-[18px]">
             ©{date} Dashabhuja 10x Teacher | All rights reserved | Designed by
@@ -125,6 +124,7 @@ export const Footer = () => {
             </a>
           </h1>
         </div>
+        
       </div>
     </section>
   );
