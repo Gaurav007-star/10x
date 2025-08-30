@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 
 export default function RadialOrbitalTimeline({ timelineData }) {
