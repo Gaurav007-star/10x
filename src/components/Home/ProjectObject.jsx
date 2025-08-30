@@ -13,7 +13,7 @@ import TenXLayoutResponsive from "../layout/TenxLayoutResponsive";
 const ProjectObject = () => {
   return (
     <Element name="project">
-      <div className="relative w-full h-screen flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 mt-10 max-[1025px]:my-2">
+      <div className="relative w-full h-screen flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 mt-20 max-[1025px]:my-2">
         <h1 className="absolute top-0 w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">
           10x Teacher Goals
         </h1>

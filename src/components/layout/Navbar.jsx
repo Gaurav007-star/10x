@@ -60,12 +60,12 @@ const Navbar = () => {
           Technology
         </NavLink>
 
-        <span
+        {/* <span
           onClick={() => scrollToSection("stakeholder")}
           className="text-[20px] hover:scale-105 transition-transform duration-200"
         >
           Stakeholder
-        </span>
+        </span> */}
 
         <span
           onClick={() => scrollToSection("demo")}

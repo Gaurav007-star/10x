@@ -32,7 +32,7 @@ const cards = [
     props: {
       videoLink:
         "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw?autoplay=1&mute=1&controls=0",
-      thumbnail: filo,
+      thumbnail: merakilabs,
       title: "Interactive Problem Solving - Meraki Labs",
       desc: "This demo shows interctive and multimodal problem solving in physics."
     },

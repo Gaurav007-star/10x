@@ -67,7 +67,6 @@ const Hero = () => {
           <div className="left w-[50%] max-[450px]:w-full h-max flex flex-col justify-center ">
             <div className="left-heading-section relative w-full h-[50%] flex items-center gap-2">
               <TypingAnimation
-                startOnView
                 className={`text-[100px] max-[1025px]:text-[60px] max-[450px]:text-[40px]`}
               >
                 Vision
@@ -96,7 +95,6 @@ const Hero = () => {
           <div className="right w-[50%] max-[450px]:w-full h-max bg-secondary max-[450px]:bg-transparent flex flex-col justify-center py-10 max-[1025px]:py-6 px-5 max-[450px]:p-0 rounded-4xl ">
             <div className="right-heading-section w-full h-[50%] flex items-center">
               <TypingAnimation
-                startOnView
                 className={`text-[100px] max-[1025px]:text-[60px] max-[450px]:text-[40px] `}
               >
                 Mission.

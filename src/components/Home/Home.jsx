@@ -23,7 +23,8 @@ const Home = () => {
       scroller.scrollTo(location.state.scrollTo, {
         duration: 900,
         smooth: true,
-        spy: true
+        spy: true,
+
       });
 
       // ✅ clear state so it doesn’t trigger again on refresh

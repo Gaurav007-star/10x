@@ -204,7 +204,7 @@ const sections = {
 
 export default function Layer() {
   return (
-    <div className="h-screen flex items-center justify-center px-[10vw] mb-20">
+    <div className="h-screen overflow-x-hidden max-[450px]:h-max flex items-center justify-center px-[10vw] mb-20">
       {/* Main Content with Guardrails on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 cursor-pointer">
         {/* Left 3 columns (main content) */}

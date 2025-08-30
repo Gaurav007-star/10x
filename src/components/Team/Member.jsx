@@ -15,6 +15,21 @@ import Sudip from "../../asset/Teams Img/Sudip Misra.jpg";
 import Suman from "../../asset/Teams Img/Suman Chakraborty.jpg";
 import Tutan from "../../asset/Teams Img/Tutan Ahmed.jpg";
 
+const UserCard = ({ image }) => {
+  return (
+    <div className="card bg-base-100 w-full shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+      <figure className="w-full h-60 max-[450px]:h-60">
+        <img src={image.src} alt={image.title} className="object-cover" />
+      </figure>
+      <div className="card-body">
+        <p className="text-[18px] text-center font-semibold text-gray-700 w-full">
+          {image.title}
+        </p>
+      </div>
+    </div>
+  );
+};
+
 export default function Member() {
   // Data: each section has title + images (with titles)
   const MembersData = [
@@ -23,13 +38,14 @@ export default function Member() {
       images: [
         { src: Niloy, title: "Niloy Ganguly" },
         { src: Parth, title: "Partha P. Chakrabarti" },
-        { src: Plaban, title: "Plaban Kumar Bhowmick" },
+        { src: Suman, title: "Suman Chakraborty" },
+
         { src: Sudip, title: "Sudip Misra" },
         {
           src: jeevanjyoti,
           title: "Jeevanjyoti Chakraborty"
         },
-        { src: Suman, title: "Suman Chakraborty" }
+        { src: Plaban, title: "Plaban Kumar Bhowmick" }
       ]
     },
     {
@@ -112,9 +128,9 @@ export default function Member() {
       <h1 className="w-full h-max text-[60px] text-primary text-center font-semibold">
         Team
       </h1>
-      <div className="bottom-section w-full h-max flex my-10">
+      <div className="bottom-section w-full h-max flex max-[1025px]:flex-col my-10 max-[450px]:my-0">
         {/* Left Sidebar */}
-        <div className="h-max w-[30%] overflow-y-auto">
+        <div className="h-max w-[30%] max-[1025px]:w-full overflow-y-auto py-4">
           <ul className="space-y-2 font-medium">
             {MembersData.map((section, index) => (
               <li
@@ -122,7 +138,7 @@ export default function Member() {
                 onClick={() => setActiveIndex(index)}
                 className={`cursor-pointer text-[24px] py-4 px-4 rounded-2xl ${
                   activeIndex === index
-                    ? "text-primary"
+                    ? "text-primary bg-secondary"
                     : "hover:bg-secondary hover:text-primary-foreground"
                 }`}
               >
@@ -133,25 +149,13 @@ export default function Member() {
         </div>
 
         {/* Right Content: Show images with titles */}
-        <div className="flex flex-col h-max w-[70%] overflow-x-hidden scroll-smooth list_hidden_scrollbar ">
+        <div className="flex flex-col h-max w-[70%] max-[1025px]:w-full overflow-x-hidden scroll-smooth list_hidden_scrollbar p-4">
           {/* <h2 className="text-[30px] font-medium mb-6 text-primary w-full text-center">
           {MembersData[activeIndex].title}
         </h2> */}
-          <div className="grid grid-cols-3 gap-4 px-4">
+          <div className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-[450px]:grid-cols-1  gap-x-4 gap-y-6 justify-center-safe">
             {MembersData[activeIndex].images.map((img, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center rounded-2xl p-3 cursor-pointer hover:scale-105 transition-transform duration-200"
-              >
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="w-[230px] h-[300px] object-contain rounded-2xl"
-                />
-                <p className="mt-4 text-[18px] text-center font-semibold  text-gray-700 w-full">
-                  {img.title}
-                </p>
-              </div>
+              <UserCard key={idx} image={img} />
             ))}
           </div>
         </div>

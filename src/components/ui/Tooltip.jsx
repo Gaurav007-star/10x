@@ -13,7 +13,7 @@ export default function Tooltip({ children, tableData, position = "top" }) {
       {visible && (
         <div
           className={`
-            absolute z-50 p-0 rounded-md w-[700px] bg-white text-black text-base
+            absolute z-50 p-0 rounded-md w-[700px] max-[1025px]:w-[400px] bg-white text-black text-base
             transition-all duration-200 ${
               tableData?.headers?.length > 0 ? "border border-black" : ""
             }
@@ -28,34 +28,43 @@ export default function Tooltip({ children, tableData, position = "top" }) {
           `}
         >
           {tableData && (
-            <table className="border-collapse text-left text-base ">
-              <thead>
-                <tr>
-                  {tableData.headers.map((header, i) => (
-                    <th
-                      key={i}
-                      className="px-4 py-2 font-semibold bg-gray-100 border border-black"
-                    >
-                      {header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.rows.map((row, rowIndex) => (
-                  <tr key={rowIndex} className="odd:bg-white even:bg-gray-50">
-                    {row.map((cell, cellIndex) => (
-                      <td
-                        key={cellIndex}
-                        className="px-4 py-2 border border-black"
+            <div className="overflow-x-auto">
+              <table className="border-collapse text-left text-base w-full">
+                <thead className="">
+                  <tr>
+                    {tableData.headers.map((header, i) => (
+                      <th
+                        key={i}
+                        className="px-4 py-2 font-semibold bg-gray-100 border border-black"
                       >
-                        {cell}
-                      </td>
+                        {header}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {tableData.rows.map((row, rowIndex) => (
+                    <tr
+                      key={rowIndex}
+                      className="odd:bg-white even:bg-gray-50 max-[450px]:border-b max-[450px]:border-black"
+                    >
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={cellIndex}
+                          className="px-4 py-2 border border-black "
+                        >
+                          {/* On mobile, show header before cell */}
+                          <span className="font-semibold hidden ">
+                            {tableData.headers[cellIndex]}:
+                          </span>
+                          <span className="">{cell}</span>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
       )}
