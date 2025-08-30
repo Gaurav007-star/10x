@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import HeroBackground from "../../asset/heroBackground.jpg";
-import HeroBackground from "../../asset/mainBackground.jpg"; 
+import HeroBackground from "../../asset/mainBackground.jpg";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,97 +20,100 @@ export default function ScrollHero() {
     const image = imageRef.current;
     const parent = parentRef.current;
 
-    // First heading container animation (move + fade during scale)
-    gsap.fromTo(
-      heading,
-      { y: 0, opacity: 1 },
-      {
-        y: window.innerHeight / 2 - heading.offsetHeight / 2 - 50,
-        opacity: 0, // fade out while moving
-        scrollTrigger: {
-          trigger: parent,
-          start: "top top",
-          end: "+=500", // slower fade-out
-          scrub: true
+    const ctx = gsap.context(() => {
+      // First heading container animation (move + fade during scale)
+      gsap.fromTo(
+        heading,
+        { y: 0, opacity: 1 },
+        {
+          y: window.innerHeight / 2 - heading.offsetHeight / 2 - 50,
+          opacity: 0, // fade out while moving
+          scrollTrigger: {
+            trigger: parent,
+            start: "top top",
+            end: "+=500", // slower fade-out
+            scrub: true
+          }
         }
-      }
-    );
+      );
 
-    // Second heading container animation (move + fade during scale)
-    gsap.fromTo(
-      secondHeading,
-      { y: 0, opacity: 1 },
-      {
-        y: window.innerHeight / 2 - heading.offsetHeight / 2 - -300,
-        opacity: 0, // final opacity
-        scale:1.1,
-        keyframes: [
-          { opacity: 0.9, ease: "power1.in", duration: 0.7 }, // mid fade
-          { opacity: 0, ease: "power1.out", duration: 0.3 } // fade out fully
-        ],
-        scrollTrigger: {
-          trigger: parent,
-          start: "top top",
-          end: "+=800",
-          scrub: true
+      // Second heading container animation (move + fade during scale)
+      gsap.fromTo(
+        secondHeading,
+        { y: 0, opacity: 1 },
+        {
+          y: window.innerHeight / 2 - heading.offsetHeight / 2 - -300,
+          opacity: 0, // final opacity
+          scale: 1.1,
+          keyframes: [
+            { opacity: 0.9, ease: "power1.in", duration: 0.7 }, // mid fade
+            { opacity: 0, ease: "power1.out", duration: 0.3 } // fade out fully
+          ],
+          scrollTrigger: {
+            trigger: parent,
+            start: "top top",
+            end: "+=800",
+            scrub: true
+          }
         }
-      }
-    );
+      );
 
-    // First heading font size + fade while scaling
-    gsap.fromTo(
-      h1,
-      { fontSize: "100px", opacity: 1 },
-      {
-        fontSize: "120px",
-        opacity: 0.6, // stop at 0.6 instead of disappearing
-        scrollTrigger: {
-          trigger: parent,
-          start: "top top",
-          end: "+=500", // longer duration
-          scrub: true
+      // First heading font size + fade while scaling
+      gsap.fromTo(
+        h1,
+        { fontSize: "100px", opacity: 1 },
+        {
+          fontSize: "120px",
+          opacity: 0.6, // stop at 0.6 instead of disappearing
+          scrollTrigger: {
+            trigger: parent,
+            start: "top top",
+            end: "+=500", // longer duration
+            scrub: true
+          }
         }
-      }
-    );
+      );
 
-    // Second heading font size + fade while scaling
-    gsap.fromTo(
-      h2,
-      { fontSize: "80px", opacity: 1 },
-      {
-        fontSize: "180px",
-        zIndex: 20,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: parent,
-          start: "top top",
-          end: "+=500",
-          scrub: true
+      // Second heading font size + fade while scaling
+      gsap.fromTo(
+        h2,
+        { fontSize: "80px", opacity: 1 },
+        {
+          fontSize: "180px",
+          zIndex: 20,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: parent,
+            start: "top top",
+            end: "+=500",
+            scrub: true
+          }
         }
-      }
-    );
+      );
 
-    // Image movement + fade-out upward
-    gsap.fromTo(
-      image,
-      { y: 0, opacity: 1, scale: 1 },
-      {
-        y: -150, // move upward more for dramatic fade
-        opacity: 0.5, // fade out completely
-        keyframes: [
-          { opacity: 0.7, ease: "power1.in", duration: 0.9 }, // mid fade
-          { opacity: 0, ease: "power1.out", duration: 0.1 } // fade out fully
-        ],
-        scale:2,
-        ease: "power1.inOut", // smooth upward drift
-        scrollTrigger: {
-          trigger: parent,
-          start: "top top",
-          end: "+=800", // slightly longer fade
-          scrub: true
+      // Image movement + fade-out upward
+      gsap.fromTo(
+        image,
+        { y: 0, opacity: 1, scale: 1 },
+        {
+          y: -150, // move upward more for dramatic fade
+          opacity: 0.5, // fade out completely
+          keyframes: [
+            { opacity: 0.7, ease: "power1.in", duration: 0.9 }, // mid fade
+            { opacity: 0, ease: "power1.out", duration: 0.1 } // fade out fully
+          ],
+          scale: 2,
+          ease: "power1.inOut", // smooth upward drift
+          scrollTrigger: {
+            trigger: parent,
+            start: "top top",
+            end: "+=800", // slightly longer fade
+            scrub: true
+          }
         }
-      }
-    );
+      );
+    }, parentRef);
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -156,7 +159,7 @@ export default function ScrollHero() {
           width: "100%",
           textAlign: "center",
           zIndex: 20,
-          overflowX:"auto",
+          overflowX: "auto",
           textWrap: "nowrap"
         }}
       >
