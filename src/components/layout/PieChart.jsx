@@ -4,6 +4,7 @@ import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import { File, Settings, Search } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { Calendar, Code, FileText, User, Clock } from "lucide-react";
+import { Element } from "react-scroll";
 
 const aiVerticalsData = [
   {
@@ -65,10 +66,7 @@ const aiVerticalsData = [
     id: 5,
     title: "Career Counselling, Mental Health & Affective Learning",
     category: "Counselling",
-    content: [
-      "AI Mentor Bot",
-      "Student Wellness Dashboard"
-    ],
+    content: ["AI Mentor Bot", "Student Wellness Dashboard"],
     relatedIds: [4, 6],
     status: "active",
     energy: 75
@@ -77,10 +75,7 @@ const aiVerticalsData = [
     id: 6,
     title: "Teacher Training",
     category: "Training",
-    content: [
-      "Teacher Co-pilot",
-      "Peer Collaboration Network"
-    ],
+    content: ["Teacher Co-pilot", "Peer Collaboration Network"],
     relatedIds: [5, 7],
     status: "active",
     energy: 70
@@ -112,7 +107,6 @@ const aiVerticalsData = [
   }
 ];
 
-
 // Card Component
 const Card = ({ title, points, color }) => {
   return (
@@ -139,17 +133,18 @@ const Card = ({ title, points, color }) => {
 
 export default function TriangleGrid() {
   return (
-    <div className="relative h-max w-full flex flex-col items-center justify-center mb-10 bg-white">
-      {/* <img
+    <Element name="project">
+      <div className="relative h-max w-full flex flex-col items-center justify-center mb-10 bg-white">
+        {/* <img
         src={background}
         alt=""
         className="w-full h-full absolute top-0 left-0 object-contain opacity-40"
       /> */}
-      <h1 className="w-full h-max text-center text-[60px] text-primary font-bold mt-10 z-50">
-        Verticals
-      </h1>
+        <h1 className="w-full h-max text-center text-[60px] text-primary font-bold mt-10 z-50">
+          Verticals
+        </h1>
 
-      {/* <div className="w-full space-y-14 px-[15vw]">
+        {/* <div className="w-full space-y-14 px-[15vw]">
         <div className="flex items-center justify-center">
           <Card
             color={"#26A9E0"}
@@ -226,7 +221,8 @@ export default function TriangleGrid() {
         </div>
       </div> */}
 
-      <RadialOrbitalTimeline timelineData={aiVerticalsData}/>
-    </div>
+        <RadialOrbitalTimeline timelineData={aiVerticalsData} />
+      </div>
+    </Element>
   );
 }
