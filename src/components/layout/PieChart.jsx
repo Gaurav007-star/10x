@@ -139,7 +139,7 @@ const Card = ({ title, points, color }) => {
 
 export default function TriangleGrid() {
   return (
-    <div className="relative h-max w-full flex flex-col items-center justify-center mb-30 bg-white">
+    <div className="relative h-max w-full flex flex-col items-center justify-center mb-10 bg-white">
       {/* <img
         src={background}
         alt=""

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
+import { GiPlainCircle } from "react-icons/gi";
 
 export default function RadialOrbitalTimeline({ timelineData }) {
   const [expandedItems, setExpandedItems] = useState({});
@@ -67,7 +68,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
 
   return (
     <div
-      className="w-full h-[150vh] flex flex-col items-center justify-center bg-white overflow-hidden"
+      className="w-full h-[130vh] flex flex-col items-center justify-center bg-white overflow-hidden"
       ref={containerRef}
       onClick={handleContainerClick}
     >
@@ -88,16 +89,16 @@ export default function RadialOrbitalTimeline({ timelineData }) {
           </div>
 
           {/* Orbits */}
-          <div className="absolute w-[400px] h-[400px] rounded-full border border-gray-400/50"></div>
-          <div className="absolute w-[650px] h-[650px] rounded-full border border-gray-400/50"></div>
+          <div className="absolute w-[300px] h-[300px] rounded-full border border-gray-400/50"></div>
+          <div className="absolute w-[700px] h-[700px] rounded-full border border-gray-400/50"></div>
 
           {/* Inner items */}
           {innerItems.map((item, index) => {
             const position = calculateNodePosition(
               index,
               innerItems.length,
-              100, // inner orbit radius
-              90 // offset spacing
+              150, // inner orbit radius
+              200 // offset spacing
             );
             const isExpanded = expandedItems[item.id];
             const nodeStyle = {
@@ -117,19 +118,18 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   setAutoRotate(true);
                 }}
               >
-                <div className="px-3 py-3 w-[150px] bg-primary text-wrap rounded-xl text-white font-semibold  transition-all duration-300 transform text-sm hover:scale-105">
+                <div className="px-3 py-3 w-[150px] bg-primary text-wrap rounded-xl text-white font-semibold  transition-all duration-300 transform text-sm hover:scale-105 z-10">
                   {item.title}
                 </div>
                 {isExpanded && (
-                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-70 p-4 bg-white border-2 border-black overflow-visible z-50">
-                    <h1 className="text-primary text-[16px] font-semibold">
-                      {item.title}
-                    </h1>
+                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-70 p-4 bg-white border-2 border-black overflow-visible z-[500]">
                     <ul className="flex flex-col gap-2 py-2">
                       {item.content.map((sub) => {
                         return (
-                          <li className="flex items-center gap-2 text-[15px]">
-                            <span>🎯</span>
+                          <li className="flex items-center gap-2 text-[16px]">
+                            <span>
+                              <GiPlainCircle className="w-2 h-2 text-primary" />
+                            </span>
                             <span>{sub}</span>
                           </li>
                         );
@@ -146,7 +146,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
             const position = calculateNodePosition(
               index,
               outerItems.length,
-              260 // outer orbit radius
+              350 // outer orbit radius
             );
             const isExpanded = expandedItems[item.id];
             const nodeStyle = {
@@ -166,13 +166,13 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   setAutoRotate(true);
                 }}
               >
-                <div className="px-4 py-3 w-[220px] rounded-xl text-center bg-secondary-foreground text-wrap  text-white font-semibold transition-all duration-300 transform hover:scale-105">
+                <div className="px-4 py-3 w-[220px] rounded-xl text-center bg-secondary-foreground text-wrap  text-white font-semibold transition-all duration-300 transform hover:scale-105 z-10">
                   {item.title}
                 </div>
                 {isExpanded && (
                   <Card
                     className={cn(
-                      "absolute w-[280px] p-4 bg-white border-2 border-black rounded-lg shadow-lg z-50 transition-all duration-200",
+                      "absolute w-[280px] p-4 bg-white border-2 border-black rounded-lg shadow-lg z-[1000] transition-all duration-200",
 
                       // vertical placement
                       position.y > 50
@@ -189,16 +189,15 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                         : ""
                     )}
                   >
-                    <h1 className="text-primary text-[16px] font-semibold">
-                      {item.title}
-                    </h1>
                     <ul className="flex flex-col gap-2 py-2">
                       {item.content.map((sub, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-[15px]"
+                          className="flex items-center gap-2 text-[16px]"
                         >
-                          <span>🎯</span>
+                          <span>
+                            <GiPlainCircle className="w-2 h-2 text-primary" />
+                          </span>
                           <span>{sub}</span>
                         </li>
                       ))}

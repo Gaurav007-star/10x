@@ -6,7 +6,7 @@ const Card = React.forwardRef(({ className, open, ...props }, ref) => {
     <div
       ref={ref}
       className={cn(
-        "rounded-lg border bg-card transition-all duration-300",
+        "rounded-lg border bg-card transition-all duration-300 z-[1000]",
         open === "top" && "origin-top animate-slideDown",
         open === "left" && "origin-left animate-slideRight",
         open === "right" && "origin-right animate-slideLeft",
