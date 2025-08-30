@@ -5,63 +5,113 @@ import { File, Settings, Search } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { Calendar, Code, FileText, User, Clock } from "lucide-react";
 
-const timelineData = [
+const aiVerticalsData = [
   {
     id: 1,
-    title: "Planning",
-    date: "Jan 2024",
-    content: "Project planning and requirements gathering phase.",
-    category: "Planning",
-    icon: Calendar,
+    title: "FLN and Early Warning Systems",
+    category: "FLN",
+    content: [
+      "Reading fluency",
+      "Language comprehension",
+      "Writing ability detection",
+      "Numeracy support",
+      "Teacher co-pilot"
+    ],
     relatedIds: [2],
-    status: "completed",
+    status: "active",
     energy: 100
   },
   {
     id: 2,
-    title: "Design",
-    date: "Feb 2024",
-    content: "UI/UX design and system architecture.",
-    category: "Design",
-    icon: FileText,
+    title: "Learning Disabilities (LD)",
+    category: "Disabilities",
+    content: [
+      "Multimodal screening AI",
+      "Risk Profiling",
+      "Causal Intervention Engine",
+      "Mobile Diagnostic AI"
+    ],
     relatedIds: [1, 3],
-    status: "completed",
+    status: "active",
     energy: 90
   },
   {
     id: 3,
-    title: "Development",
-    date: "Mar 2024",
-    content: "Core features implementation and testing.",
-    category: "Development",
-    icon: Code,
+    title: "Assessment Innovations",
+    category: "Assessment",
+    content: [
+      "Adaptive micro-assessments",
+      "Multimodal response analysis",
+      "Personalization"
+    ],
     relatedIds: [2, 4],
-    status: "in-progress",
-    energy: 60
+    status: "active",
+    energy: 85
   },
   {
     id: 4,
-    title: "Testing",
-    date: "Apr 2024",
-    content: "User testing and bug fixes.",
-    category: "Testing",
-    icon: User,
+    title: "Digital Content Accreditation",
+    category: "Accreditation",
+    content: [
+      "Composite Accreditation Score",
+      "Curriculum Alignment Engines",
+      "Trust Badges & Ratings"
+    ],
     relatedIds: [3, 5],
-    status: "pending",
-    energy: 30
+    status: "active",
+    energy: 80
   },
   {
     id: 5,
-    title: "Release",
-    date: "May 2024",
-    content: "Final deployment and release.",
-    category: "Release",
-    icon: Clock,
-    relatedIds: [4],
-    status: "pending",
-    energy: 10
+    title: "Career Counselling, Mental Health & Affective Learning",
+    category: "Counselling",
+    content: [
+      "AI Mentor Bot",
+      "Student Wellness Dashboard"
+    ],
+    relatedIds: [4, 6],
+    status: "active",
+    energy: 75
+  },
+  {
+    id: 6,
+    title: "Teacher Training",
+    category: "Training",
+    content: [
+      "Teacher Co-pilot",
+      "Peer Collaboration Network"
+    ],
+    relatedIds: [5, 7],
+    status: "active",
+    energy: 70
+  },
+  {
+    id: 7,
+    title: "Pedagogy and Learning Analytics",
+    category: "Pedagogy",
+    content: [
+      "AI-assisted doubt clearing",
+      "Personalized lesson plan generation"
+    ],
+    relatedIds: [6, 8],
+    status: "active",
+    energy: 65
+  },
+  {
+    id: 8,
+    title: "AI-Driven Decision Support & Interventions",
+    category: "AI Decision Support",
+    content: [
+      "AI Decision Support",
+      "Personalized Insights",
+      "Human-in-the-Loop"
+    ],
+    relatedIds: [7],
+    status: "active",
+    energy: 60
   }
 ];
+
 
 // Card Component
 const Card = ({ title, points, color }) => {
@@ -89,17 +139,17 @@ const Card = ({ title, points, color }) => {
 
 export default function TriangleGrid() {
   return (
-    <div className="relative h-[70vh] w-full flex flex-col items-center justify-center mb-30 bg-white">
-      <img
+    <div className="relative h-max w-full flex flex-col items-center justify-center mb-30 bg-white">
+      {/* <img
         src={background}
         alt=""
         className="w-full h-full absolute top-0 left-0 object-contain opacity-40"
-      />
-      <h1 className="w-full h-max text-center text-[60px] text-primary font-bold my-10 z-50">
+      /> */}
+      <h1 className="w-full h-max text-center text-[60px] text-primary font-bold mt-10 z-50">
         Verticals
       </h1>
 
-      <div className="w-full space-y-14 px-[15vw]">
+      {/* <div className="w-full space-y-14 px-[15vw]">
         <div className="flex items-center justify-center">
           <Card
             color={"#26A9E0"}
@@ -174,9 +224,9 @@ export default function TriangleGrid() {
             ]}
           />
         </div>
-      </div>
+      </div> */}
 
-      {/* <RadialOrbitalTimeline timelineData={timelineData}/> */}
+      <RadialOrbitalTimeline timelineData={aiVerticalsData}/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-// import { Card } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export default function RadialOrbitalTimeline({ timelineData }) {
   const [expandedItems, setExpandedItems] = useState({});
@@ -11,8 +12,8 @@ export default function RadialOrbitalTimeline({ timelineData }) {
   const nodeRefs = useRef({});
 
   // split items
-  const outerItems = timelineData.slice(0, 3); // 3 outer
-  const innerItems = timelineData.slice(3, 5); // 2 inner
+  const outerItems = timelineData.slice(0, 5); // 3 outer
+  const innerItems = timelineData.slice(5, timelineData.length); // 2 inner
 
   const handleContainerClick = (e) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -60,13 +61,13 @@ export default function RadialOrbitalTimeline({ timelineData }) {
     const radian = (angle * Math.PI) / 180;
     const x = radius * Math.cos(radian);
     const y = radius * Math.sin(radian);
-    const zIndex = Math.round(100 + 50 * Math.cos(radian));
+    const zIndex = Math.round(200 + 50 * Math.cos(radian));
     return { x, y, zIndex };
   };
 
   return (
     <div
-      className="w-full h-screen flex flex-col items-center justify-center bg-white overflow-hidden"
+      className="w-full h-[150vh] flex flex-col items-center justify-center bg-white overflow-hidden"
       ref={containerRef}
       onClick={handleContainerClick}
     >
@@ -87,8 +88,8 @@ export default function RadialOrbitalTimeline({ timelineData }) {
           </div>
 
           {/* Orbits */}
-          <div className="absolute w-[200px] h-[200px] rounded-full border border-gray-400/50"></div>
-          <div className="absolute w-[520px] h-[520px] rounded-full border border-gray-400/50"></div>
+          <div className="absolute w-[400px] h-[400px] rounded-full border border-gray-400/50"></div>
+          <div className="absolute w-[650px] h-[650px] rounded-full border border-gray-400/50"></div>
 
           {/* Inner items */}
           {innerItems.map((item, index) => {
@@ -101,7 +102,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
             const isExpanded = expandedItems[item.id];
             const nodeStyle = {
               transform: `translate(${position.x}px, ${position.y}px)`,
-              zIndex: isExpanded ? 200 : position.zIndex,
+              zIndex: isExpanded ? 200 : position.zIndex
             };
             return (
               <div
@@ -116,15 +117,24 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   setAutoRotate(true);
                 }}
               >
-                <div
-                  className="px-3 py-1 rounded-full text-white font-semibold border-2 border-black transition-all duration-300 transform text-sm"
-                  style={{ backgroundColor: item.color || "#2563eb" }}
-                >
+                <div className="px-3 py-3 w-[150px] bg-primary text-wrap rounded-xl text-white font-semibold  transition-all duration-300 transform text-sm hover:scale-105">
                   {item.title}
                 </div>
                 {isExpanded && (
-                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-56 bg-black/90 backdrop-blur-lg border-white/30 shadow-xl shadow-white/10 overflow-visible">
-                    <h1 className="text-white">{item.title}</h1>
+                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-70 p-4 bg-white border-2 border-black overflow-visible z-50">
+                    <h1 className="text-primary text-[16px] font-semibold">
+                      {item.title}
+                    </h1>
+                    <ul className="flex flex-col gap-2 py-2">
+                      {item.content.map((sub) => {
+                        return (
+                          <li className="flex items-center gap-2 text-[15px]">
+                            <span>🎯</span>
+                            <span>{sub}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </Card>
                 )}
               </div>
@@ -141,7 +151,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
             const isExpanded = expandedItems[item.id];
             const nodeStyle = {
               transform: `translate(${position.x}px, ${position.y}px)`,
-              zIndex: isExpanded ? 200 : position.zIndex,
+              zIndex: isExpanded ? 200 : position.zIndex
             };
             return (
               <div
@@ -156,15 +166,43 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   setAutoRotate(true);
                 }}
               >
-                <div
-                  className="px-4 py-2 rounded-full text-white font-semibold border-2 border-black transition-all duration-300 transform"
-                  style={{ backgroundColor: item.color || "#f97316" }}
-                >
+                <div className="px-4 py-3 w-[220px] rounded-xl text-center bg-secondary-foreground text-wrap  text-white font-semibold transition-all duration-300 transform hover:scale-105">
                   {item.title}
                 </div>
                 {isExpanded && (
-                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-64 bg-black/90 backdrop-blur-lg border-white/30 shadow-xl shadow-white/10 overflow-visible">
-                    <h1 className="text-white">{item.title}</h1>
+                  <Card
+                    className={cn(
+                      "absolute w-[280px] p-4 bg-white border-2 border-black rounded-lg shadow-lg z-50 transition-all duration-200",
+
+                      // vertical placement
+                      position.y > 50
+                        ? "bottom-full mb-3 left-1/2 -translate-x-1/2"
+                        : position.y < -50
+                        ? "top-full mt-3 left-1/2 -translate-x-1/2"
+                        : "top-1/2 -translate-y-1/2",
+
+                      // horizontal placement
+                      position.x > 100
+                        ? "left-full ml-3"
+                        : position.x < -100
+                        ? "right-full mr-3"
+                        : ""
+                    )}
+                  >
+                    <h1 className="text-primary text-[16px] font-semibold">
+                      {item.title}
+                    </h1>
+                    <ul className="flex flex-col gap-2 py-2">
+                      {item.content.map((sub, i) => (
+                        <li
+                          key={i}
+                          className="flex items-center gap-2 text-[15px]"
+                        >
+                          <span>🎯</span>
+                          <span>{sub}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </Card>
                 )}
               </div>

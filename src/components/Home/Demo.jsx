@@ -8,7 +8,6 @@ import OpenObe from "../../asset/demo/OpenObe.jpg";
 import filo from "../../asset/filo.jpg";
 import merakilabs from "../../asset/merakilabs.jpg";
 
-
 const cards = [
   {
     props: {
@@ -33,8 +32,8 @@ const cards = [
       videoLink:
         "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw",
       thumbnail: merakilabs,
-      title: "Interactive Problem Solving - Meraki Labs",
-      desc: "This demo shows interctive and multimodal problem solving in physics."
+      title: "Interactive Problem Solving",
+      desc: "This demo shows interactive and multimodal problem solving in physics."
     },
     id: 3
   },
@@ -43,20 +42,31 @@ const cards = [
       videoLink:
         "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN",
       thumbnail: merakilabs,
-      title: "Guided Problem Solving with Error Identification - Meraki Labs",
-      desc: "Understanding Energy and Momentum in Spring Systems which identifies mistakes in student provided solution and guide towards the solution."
+      title: "Guided Problem Solving with Error Identification",
+      desc: "Understanding Energy and Momentum in Spring Systems. The background AI identifies mistakes in student provided solution and guides the student towards the solution"
     },
     id: 4
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/VUqbnlvcEdc?si=m4mA5tEUpIDK3UsT",
+      thumbnail: filo,
+      title: "FLN Problem Solving in Odia",
+      desc: "This demonstrates basic addition problem solving in Odia with setp-wise explanation."
+    },
+    id: 5
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/4OKhESgwEMA?si=S8eB9E0Y2F75AgSY",
+      thumbnail: filo,
+      title: "BODMAS Rule",
+      desc: "The video demonstrates AI-based step-wise explanation of the famous mnemonics for solving cmplex arithmatic expressions."
+    },
+    id: 6
   }
-  //    {
-  //   props: {
-  //     videoLink: "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN" ,
-  //     thumbnail: videoThumbLink,
-  //     title: "FLN Problem Solving in Odia - FILO",
-  //     desc: "Basic addition problem solving in Odia.",
-  //   },
-  //   id: 5
-  // },
 ];
 
 // Main-Component

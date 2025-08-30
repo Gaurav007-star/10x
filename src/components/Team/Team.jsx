@@ -3,6 +3,7 @@ import Navbar from "../layout/Navbar";
 import Member from "./Member";
 import Partners from "./Partners";
 import { Footer } from "../ui/footer";
+import BackToTop from "../ui/BcaktoTop";
 
 const Team = () => {
   return (
@@ -11,6 +12,7 @@ const Team = () => {
       <Member />
       <Partners/>
       <Footer/>
+      <BackToTop/>
     </div>
   );
 };

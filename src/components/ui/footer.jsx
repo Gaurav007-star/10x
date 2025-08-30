@@ -6,7 +6,7 @@ import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
 import { Link } from "react-router";
 import BackToTop from "./BcaktoTop";
 const defaultAddresses = [
-  { id: "email", title: "info@dashabhuja.com" },
+  { id: "email", title: "head@cse.iitkgp.ac.in" },
   { id: "phone", title: "+91 - 3222 - 283754, 284756" },
   {
     id: "address",
@@ -93,7 +93,7 @@ export const Footer = () => {
 
         {/* BOTTOM ROW */}
         <div className="text-xs text-center mt-8 pb-5 text-gray-500">
-          <div className="w-full flex items-center justify-center gap-20 max-[450px]:gap-2 px-4 py-4 max-[450px]:px-2 font-medium text-primary text-[18px] max-[450px]:text-[14px] my-4">
+          {/* <div className="w-full flex items-center justify-center gap-20 max-[450px]:gap-2 px-4 py-4 max-[450px]:px-2 font-medium text-primary text-[18px] max-[450px]:text-[14px] my-4">
             <Link
               to={"#"}
               className="hover:scale-105 transition-transform duration-200 cursor-pointer"
@@ -112,16 +112,16 @@ export const Footer = () => {
             >
               Legal disclaimer
             </Link>
-          </div>
+          </div> */}
           <h1 className="text-[18px]">
-            ©{date} Dashabhuja 10x Teacher | All rights reserved | Designed by
-            <a
+            ©{date} Dashabhuja 10x Teacher | All rights reserved 
+            {/* <a
               href="https://www.techscooper.com/"
               className="text-sky-500 no-underline hover:underline"
               target="_blank"
             >
-              TechScooper
-            </a>
+              | Designed by TechScooper
+            </a> */}
           </h1>
         </div>
         
