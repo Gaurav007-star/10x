@@ -40,7 +40,6 @@ const Home = () => {
       <PieChartCard />
       <Demo />
       <Capabilities />
-      <Stakeholder />
       <Footer />
     </div>
   );

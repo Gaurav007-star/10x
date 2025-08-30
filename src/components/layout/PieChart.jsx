@@ -2,6 +2,66 @@ import React from "react";
 import background from "../../asset/BG V.jpg";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import { File, Settings, Search } from "lucide-react";
+import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import { Calendar, Code, FileText, User, Clock } from "lucide-react";
+
+const timelineData = [
+  {
+    id: 1,
+    title: "Planning",
+    date: "Jan 2024",
+    content: "Project planning and requirements gathering phase.",
+    category: "Planning",
+    icon: Calendar,
+    relatedIds: [2],
+    status: "completed",
+    energy: 100,
+  },
+  {
+    id: 2,
+    title: "Design",
+    date: "Feb 2024",
+    content: "UI/UX design and system architecture.",
+    category: "Design",
+    icon: FileText,
+    relatedIds: [1, 3],
+    status: "completed" ,
+    energy: 90,
+  },
+  {
+    id: 3,
+    title: "Development",
+    date: "Mar 2024",
+    content: "Core features implementation and testing.",
+    category: "Development",
+    icon: Code,
+    relatedIds: [2, 4],
+    status: "in-progress",
+    energy: 60,
+  },
+  {
+    id: 4,
+    title: "Testing",
+    date: "Apr 2024",
+    content: "User testing and bug fixes.",
+    category: "Testing",
+    icon: User,
+    relatedIds: [3, 5],
+    status: "pending",
+    energy: 30,
+  },
+  {
+    id: 5,
+    title: "Release",
+    date: "May 2024",
+    content: "Final deployment and release.",
+    category: "Release",
+    icon: Clock,
+    relatedIds: [4],
+    status: "pending",
+    energy: 10,
+  },
+];
 
 // Card Component
 const Card = ({ title, points, color }) => {
@@ -29,14 +89,17 @@ const Card = ({ title, points, color }) => {
 
 export default function TriangleGrid() {
   return (
-    <div className="relative h-[80vh] w-full flex flex-col items-center justify-center mb-20  bg-white">
-      <img src={background} alt="" className="w-full h-full absolute top-0 left-0 object-contain opacity-40" />
+    <div className="relative h-[70vh] w-full flex flex-col items-center justify-center mb-30 bg-white">
+      <img
+        src={background}
+        alt=""
+        className="w-full h-full absolute top-0 left-0 object-contain opacity-40"
+      />
       <h1 className="w-full h-max text-center text-[60px] text-primary font-bold my-10 z-50">
         Verticals
       </h1>
 
       <div className="w-full space-y-14 px-[15vw]">
-
         <div className="flex items-center justify-center">
           <Card
             color={"#26A9E0"}
@@ -49,7 +112,6 @@ export default function TriangleGrid() {
             ]}
           />
         </div>
-
 
         <div className="flex items-center justify-center gap-10">
           <Card
@@ -77,7 +139,6 @@ export default function TriangleGrid() {
           />
         </div>
 
- 
         <div className="flex items-center justify-center gap-10">
           <Card
             color={"#1F41AE"}
@@ -115,17 +176,9 @@ export default function TriangleGrid() {
         </div>
       </div>
 
-      {/* <OrbitingCircles>
-        <File />
-        <Settings />
-        <h1>Hello</h1>
-      </OrbitingCircles>
-      <OrbitingCircles radius={100} reverse>
-        <File />
-        <Settings />
-        <File />
-        <Search />
-      </OrbitingCircles> */}
+
+{/* <RadialOrbitalTimeline timelineData={timelineData}/> */}
+
     </div>
   );
 }

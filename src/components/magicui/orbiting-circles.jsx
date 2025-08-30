@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import Tooltip from "../ui/Tooltip";
 
 export function OrbitingCircles({
   className,
@@ -19,37 +20,40 @@ export function OrbitingCircles({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          className="pointer-events-none absolute inset-0 size-full">
+          className="pointer-events-none absolute inset-0 size-full"
+        >
           <circle
             className="stroke-black/10 stroke-1 dark:stroke-white/10"
             cx="50%"
             cy="50%"
             r={radius}
-            fill="none" />
+            fill="none"
+          />
         </svg>
       )}
-      {React.Children.map(children, (child, index) => {
-        const angle = (360 / React.Children.count(children)) * index;
-        return (
-          <div
-            style={
-              {
+      <div className="group-section w-max h-max group">
+        {React.Children.map(children, (child, index) => {
+          const angle = (360 / React.Children.count(children)) * index;
+          return (
+            <div
+              style={{
                 "--duration": calculatedDuration,
                 "--radius": radius,
                 "--angle": angle,
                 "--icon-size": `${iconSize}px`
-              }
-            }
-            className={cn(
-              `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full`,
-              { "[animation-direction:reverse]": reverse },
-              className
-            )}
-            {...props}>
-            {child}
-          </div>
-        );
-      })}
+              }}
+              className={cn(
+                `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full group-hover:[animation-play-state:paused]`,
+                { "[animation-direction:reverse]": reverse },
+                className
+              )}
+              {...props}
+            >
+              <Tooltip>{child}</Tooltip>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }

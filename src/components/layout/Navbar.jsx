@@ -33,7 +33,7 @@ const Navbar = () => {
         />
       </div>
 
-      {/* link-section */}
+      {/* link-section (desktop) */}
       <div className="right max-[1025px]:hidden link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
         <span
           onClick={() => scrollToSection("project")}
@@ -59,13 +59,6 @@ const Navbar = () => {
         >
           Technology
         </NavLink>
-
-        {/* <span
-          onClick={() => scrollToSection("stakeholder")}
-          className="text-[20px] hover:scale-105 transition-transform duration-200"
-        >
-          Stakeholder
-        </span> */}
 
         <span
           onClick={() => scrollToSection("demo")}
@@ -104,10 +97,9 @@ export default Navbar;
 
 const MenuSidebarComponent = ({ scrollToSection }) => {
   return (
-    <div className="drawer max-[1025px]:block hidden w-max ">
+    <div className="drawer max-[1025px]:block hidden w-max">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        {/* Page content here */}
         <label htmlFor="my-drawer">
           <HiOutlineMenuAlt3 className="text-secondary-foreground text-4xl cursor-pointer" />
         </label>
@@ -119,32 +111,57 @@ const MenuSidebarComponent = ({ scrollToSection }) => {
           className="drawer-overlay"
         ></label>
         <ul className="menu bg-base-200 flex flex-col justify-between h-full w-80 p-4">
-          {/* Sidebar content here */}
-          <div className="link-section cursor-pointer flex flex-col gap-4 font-medium h-[70%]">
+          {/* Sidebar content */}
+          <div className="link-section cursor-pointer flex flex-col gap-6 font-medium h-[70%]">
             <span
               onClick={() => scrollToSection("hero")}
-              className="text-[30px] hover:scale-105 transition-transform duration-200"
+              className="text-[26px] hover:scale-105 transition-transform duration-200"
             >
               Home
             </span>
+
             <span
               onClick={() => scrollToSection("project")}
-              className="text-[30px] hover:scale-105 transition-transform duration-200"
+              className="text-[26px] hover:scale-105 transition-transform duration-200"
             >
               Project Objective
             </span>
+
             <span
               onClick={() => scrollToSection("capabilities")}
-              className="text-[30px] hover:scale-105 transition-transform duration-200"
+              className="text-[26px] hover:scale-105 transition-transform duration-200"
             >
               Capabilities
             </span>
+
+            <NavLink
+              to="/technology"
+              className={({ isActive }) =>
+                `text-[26px] hover:scale-105 transition-transform duration-200 ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
+            >
+              Technology
+            </NavLink>
+
             <span
               onClick={() => scrollToSection("demo")}
-              className="text-[30px] hover:scale-105 transition-transform duration-200"
+              className="text-[26px] hover:scale-105 transition-transform duration-200"
             >
               Demo
             </span>
+
+            <NavLink
+              to="/team"
+              className={({ isActive }) =>
+                `text-[26px] hover:scale-105 transition-transform duration-200 ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
+            >
+              Team
+            </NavLink>
           </div>
 
           <div className="kgp-logo flex items-center justify-center h-[30%]">

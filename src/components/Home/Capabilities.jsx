@@ -5,7 +5,7 @@ import { TimeLineDemo } from "../ui/TimelineDemo";
 const Capabilities = () => {
   return (
     <Element name="capabilities">
-      <div className="w-full h-max">
+      <div className="w-full h-max my-20">
         <TimeLineDemo/>
       </div>
     </Element>

@@ -31,7 +31,7 @@ const cards = [
   {
     props: {
       videoLink:
-        "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw?autoplay=1&mute=1&controls=0",
+        "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw",
       thumbnail: merakilabs,
       title: "Interactive Problem Solving - Meraki Labs",
       desc: "This demo shows interctive and multimodal problem solving in physics."
@@ -41,7 +41,7 @@ const cards = [
   {
     props: {
       videoLink:
-        "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN?autoplay=1&mute=1&controls=0",
+        "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN",
       thumbnail: merakilabs,
       title: "Guided Problem Solving with Error Identification - Meraki Labs",
       desc: "Understanding Energy and Momentum in Spring Systems which identifies mistakes in student provided solution and guide towards the solution."
