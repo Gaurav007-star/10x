@@ -118,7 +118,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   setAutoRotate(true);
                 }}
               >
-                <div className="px-3 py-3 w-[150px] bg-primary text-wrap rounded-xl text-white font-semibold  transition-all duration-300 transform text-sm hover:scale-105 z-10">
+                <div className="px-3 py-3 w-[150px] bg-primary text-wrap text-center rounded-xl text-white font-semibold  transition-all duration-300 transform text-sm hover:scale-105 z-10">
                   {item.title}
                 </div>
                 {isExpanded && (
