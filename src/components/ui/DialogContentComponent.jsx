@@ -10,16 +10,9 @@ import {
 
 const DialogContentComponent = ({ videoLink }) => {
   return (
-    <DialogContent className="w-full h-[500px]">
-      <DialogHeader>
-        <DialogTitle>Share link</DialogTitle>
-      </DialogHeader>
+    <DialogContent className="w-[800px] h-[500px] p-0">
       <div className="w-full h-full p-5 rounded-xl">
-        <iframe
-          src={videoLink}
-          frameborder="0"
-          className="w-full h-full rounded-xl"
-        ></iframe>
+        <iframe src={videoLink} className="w-full h-full rounded-xl" />
       </div>
     </DialogContent>
   );

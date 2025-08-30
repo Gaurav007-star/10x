@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
-import { NavLink } from "react-router";
+import React from "react";
+import { NavLink, useNavigate } from "react-router";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import kgpIcon from "../../asset/kgp-icon.png";
 import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
+import { scroller } from "react-scroll";
 
 const Navbar = () => {
-  const [active, setActive] = useState({
-    project: true,
-    capabilities: false,
-    demo: false,
-    stakeholder: false
-  });
-
-  const activeLinkHandler = (e) => {
-    const id = e.target.id;
-    setActive({
-      stakeholder: id === "stakeholder",
-      project: id === "project",
-      capabilities: id === "capabilities",
-      demo: id === "demo"
-    });
-  };
-
   const navigate = useNavigate();
+
+  // helper function for scroll + navigation
+  const scrollToSection = (section) => {
+    if (window.location.pathname === "/") {
+      scroller.scrollTo(section, {
+        duration: 900,
+        smooth: true,
+        spy: true,
+      });
+    } else {
+      navigate("/", { state: { scrollTo: section } });
+    }
+  };
 
   return (
     <div className="navbar w-full h-max flex items-center justify-between py-5 max-[450px]:py-5 max-[1025px]:py-8 px-10 max-[450px]:px-5">
@@ -38,60 +35,55 @@ const Navbar = () => {
 
       {/* link-section */}
       <div className="right max-[1025px]:hidden link-section flex items-center gap-12 cursor-pointer font-medium text-[18px]">
-        <Link
-          to="project"
-          id="project"
-          smooth={true}
-          duration={900}
-          onClick={activeLinkHandler}
-          className={`${
-            active.project ? "text-primary" : ""
-          } text-[20px] hover:scale-105 transition-transform duration-200`}
+        <span
+          onClick={() => scrollToSection("project")}
+          className="text-[20px] hover:scale-105 transition-transform duration-200"
         >
           Project Vertical
-        </Link>
-        <Link
-          to="capabilities"
-          id="capabilities"
-          smooth={true}
-          duration={900}
-          onClick={activeLinkHandler}
-          className={`${
-            active.capabilities ? "text-primary" : ""
-          } text-[20px] hover:scale-105 transition-transform duration-200`}
+        </span>
+
+        <span
+          onClick={() => scrollToSection("capabilities")}
+          className="text-[20px] hover:scale-105 transition-transform duration-200"
         >
           Capabilities
-        </Link>
+        </span>
 
-        <NavLink to={"/technology"}>Technology</NavLink>
+        <NavLink
+          to="/technology"
+          className={({ isActive }) =>
+            `text-[20px] hover:scale-105 transition-transform duration-200 ${
+              isActive ? "text-primary" : ""
+            }`
+          }
+        >
+          Technology
+        </NavLink>
 
-        <Link
-          to="stakeholder"
-          id="stakeholder"
-          smooth={true}
-          duration={900}
-          onClick={activeLinkHandler}
-          className={`${
-            active.demo ? "text-primary" : ""
-          } text-[20px] hover:scale-105 transition-transform duration-200`}
+        <span
+          onClick={() => scrollToSection("stakeholder")}
+          className="text-[20px] hover:scale-105 transition-transform duration-200"
         >
           Stakeholder
-        </Link>
+        </span>
 
-        <Link
-          to="demo"
-          id="demo"
-          smooth={true}
-          duration={900}
-          onClick={activeLinkHandler}
-          className={`${
-            active.demo ? "text-primary" : ""
-          } text-[20px] hover:scale-105 transition-transform duration-200`}
+        <span
+          onClick={() => scrollToSection("demo")}
+          className="text-[20px] hover:scale-105 transition-transform duration-200"
         >
           Demo
-        </Link>
+        </span>
 
-        <NavLink to={"/team"}>Team</NavLink>
+        <NavLink
+          to="/team"
+          className={({ isActive }) =>
+            `text-[20px] hover:scale-105 transition-transform duration-200 ${
+              isActive ? "text-primary" : ""
+            }`
+          }
+        >
+          Team
+        </NavLink>
 
         <img
           src={kgpIcon}
@@ -99,104 +91,63 @@ const Navbar = () => {
           className="w-20 h-fit bg-cover bg-center ml-10"
         />
       </div>
-      <MenuSidebarComponent />
+
+      {/* sidebar for mobile */}
+      <MenuSidebarComponent scrollToSection={scrollToSection} />
     </div>
   );
 };
 
 export default Navbar;
 
-// Sidebar part
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { useNavigate } from "react-router";
+// ---------------- Sidebar Component ---------------- //
 
-const MenuSidebarComponent = () => {
-  const [active, setActive] = useState({
-    hero: true,
-    project: false,
-    capabilities: false,
-    demo: false
-  });
-
-  const activeLinkHandler = (e) => {
-    const id = e.target.id;
-    setActive({
-      hero: id === "hero",
-      project: id === "project",
-      capabilities: id === "capabilities",
-      demo: id === "demo"
-    });
-  };
-
+const MenuSidebarComponent = ({ scrollToSection }) => {
   return (
     <div className="drawer max-[1025px]:block hidden w-max ">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content  ">
+      <div className="drawer-content">
         {/* Page content here */}
         <label htmlFor="my-drawer">
           <HiOutlineMenuAlt3 className="text-secondary-foreground text-4xl cursor-pointer" />
         </label>
       </div>
-      <div className="drawer-side z-50 ">
+      <div className="drawer-side z-50">
         <label
           htmlFor="my-drawer"
           aria-label="close sidebar"
-          className="drawer-overlay "
+          className="drawer-overlay"
         ></label>
         <ul className="menu bg-base-200 flex flex-col justify-between h-full w-80 p-4">
           {/* Sidebar content here */}
           <div className="link-section cursor-pointer flex flex-col gap-4 font-medium h-[70%]">
-            <Link
-              to="hero"
-              id="hero"
-              smooth={true}
-              duration={900}
-              onClick={activeLinkHandler}
-              className={`${
-                active.hero ? "text-primary" : ""
-              } text-[30px] hover:scale-105 transition-transform duration-200`}
+            <span
+              onClick={() => scrollToSection("hero")}
+              className="text-[30px] hover:scale-105 transition-transform duration-200"
             >
               Home
-            </Link>
-            <Link
-              to="project"
-              id="project"
-              smooth={true}
-              duration={900}
-              onClick={activeLinkHandler}
-              className={`${
-                active.project ? "text-primary" : ""
-              } text-[30px] hover:scale-105 transition-transform duration-200`}
+            </span>
+            <span
+              onClick={() => scrollToSection("project")}
+              className="text-[30px] hover:scale-105 transition-transform duration-200"
             >
               Project Objective
-            </Link>
-            <Link
-              to="capabilities"
-              id="capabilities"
-              smooth={true}
-              duration={900}
-              onClick={activeLinkHandler}
-              className={`${
-                active.capabilities ? "text-primary" : ""
-              } text-[30px] hover:scale-105 transition-transform duration-200`}
+            </span>
+            <span
+              onClick={() => scrollToSection("capabilities")}
+              className="text-[30px] hover:scale-105 transition-transform duration-200"
             >
               Capabilities
-            </Link>
-            <Link
-              to="demo"
-              id="demo"
-              smooth={true}
-              duration={900}
-              onClick={activeLinkHandler}
-              className={`${
-                active.demo ? "text-primary" : ""
-              } text-[30px] hover:scale-105 transition-transform duration-200`}
+            </span>
+            <span
+              onClick={() => scrollToSection("demo")}
+              className="text-[30px] hover:scale-105 transition-transform duration-200"
             >
               Demo
-            </Link>
+            </span>
           </div>
 
-          <div className="kgp-logo flex items-center justify-center h-[30%] ">
+          <div className="kgp-logo flex items-center justify-center h-[30%]">
             <img src={kgpIcon} alt="logo" className="w-[180px] h-auto" />
           </div>
         </ul>

@@ -4,6 +4,7 @@ import KgpLogo from "../../asset/kgp-icon.png";
 import MainLogo from "../../asset/Dashabhuja_10xTeacher-logo.png";
 
 import { Link } from "react-router";
+import BackToTop from "./BcaktoTop";
 const defaultAddresses = [
   { id: "email", title: "info@dashabhuja.com" },
   { id: "phone", title: "+91 - 3222 - 283754, 284756" },
@@ -111,6 +112,7 @@ export const Footer = () => {
             >
               Legal disclaimer
             </Link>
+            <BackToTop/>
           </div>
           <h1 className="text-[18px]">
             ©{date} Dashabhuja 10x Teacher | All rights reserved | Designed by

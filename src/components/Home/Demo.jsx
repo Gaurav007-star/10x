@@ -5,10 +5,9 @@ import Horizontal from "../ui/Horizontal";
 import DemoExample from "../ui/DemoExample";
 import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 import OpenObe from "../../asset/demo/OpenObe.jpg";
+import filo from "../../asset/filo.jpg";
+import merakilabs from "../../asset/merakilabs.jpg";
 
-// const videoLink = "https://www.youtube.com/embed/hJP5GqnTrNo";
-// const videoThumbLink =
-//   "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const cards = [
   {
@@ -27,17 +26,36 @@ const cards = [
       desc: "This tool will be a comprehensive, open-source, web-based platform that supports educational institutions, faculty, and accreditation bodies in implementing and sustaining Outcome-Based Education (OBE). It will enable the end-to-end lifecycle of curriculum design, review, and monitoring, ensuring alignment with national and international standards such as NBA, NAAC, ABET, and Washington Accord.",
       link: "https://ide.iitkgp.ac.in/Pedagogy1/pedagogy_main.jsp"
     },
-    id: 1
+    id: 2
   },
-  // {
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw?autoplay=1&mute=1&controls=0",
+      thumbnail: filo,
+      title: "Interactive Problem Solving - Meraki Labs",
+      desc: "This demo shows interctive and multimodal problem solving in physics."
+    },
+    id: 3
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN?autoplay=1&mute=1&controls=0",
+      thumbnail: merakilabs,
+      title: "Guided Problem Solving with Error Identification - Meraki Labs",
+      desc: "Understanding Energy and Momentum in Spring Systems which idenfies mistakes in student provided solution and guide towards the solution."
+    },
+    id: 4
+  }
+  //    {
   //   props: {
-  //     videoLink: videoLink,
+  //     videoLink: "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN" ,
   //     thumbnail: videoThumbLink,
-  //     title: "Demo ai",
-  //     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae reprehenderit quaerat molestias ad, natus aliquam error harum totam debitis! Facere.",
-  //     link: "https://bloomfront-production.up.railway.app/"
+  //     title: "FLN Problem Solving in Odia - FILO",
+  //     desc: "Basic addition problem solving in Odia.",
   //   },
-  //   id: 2
+  //   id: 5
   // },
 ];
 
@@ -46,7 +64,7 @@ const Demo = () => {
   // Start at middle
   return (
     <Element name="demo">
-      <Horizontal cards={cards}/>
+      <Horizontal cards={cards} />
 
       <h1 className="w-full h-max text-center text-[50px] font-bold text-primary min-[1025px]:hidden">
         Demo

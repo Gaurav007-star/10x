@@ -1,5 +1,7 @@
 import React from "react";
 import background from "../../asset/BG V.jpg";
+import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
+import { File, Settings, Search } from "lucide-react";
 
 // Card Component
 const Card = ({ title, points, color }) => {
@@ -29,9 +31,12 @@ export default function TriangleGrid() {
   return (
     <div className="relative h-[80vh] w-full flex flex-col items-center justify-center mb-20  bg-white">
       <img src={background} alt="" className="w-full h-full absolute top-0 left-0 object-contain opacity-40" />
-    <h1 className="w-full h-max text-center text-[60px] text-primary font-bold my-10 z-50">Verticals</h1>
+      <h1 className="w-full h-max text-center text-[60px] text-primary font-bold my-10 z-50">
+        Verticals
+      </h1>
+
       <div className="w-full space-y-14 px-[15vw]">
-        {/* Row 1 */}
+
         <div className="flex items-center justify-center">
           <Card
             color={"#26A9E0"}
@@ -45,7 +50,7 @@ export default function TriangleGrid() {
           />
         </div>
 
-        {/* Row 2 (3 cards) */}
+
         <div className="flex items-center justify-center gap-10">
           <Card
             color={"#1B75BB"}
@@ -72,7 +77,7 @@ export default function TriangleGrid() {
           />
         </div>
 
-        {/* Row 3 (4 cards) */}
+ 
         <div className="flex items-center justify-center gap-10">
           <Card
             color={"#1F41AE"}
@@ -109,6 +114,18 @@ export default function TriangleGrid() {
           />
         </div>
       </div>
+
+      {/* <OrbitingCircles>
+        <File />
+        <Settings />
+        <h1>Hello</h1>
+      </OrbitingCircles>
+      <OrbitingCircles radius={100} reverse>
+        <File />
+        <Settings />
+        <File />
+        <Search />
+      </OrbitingCircles> */}
     </div>
   );
 }
