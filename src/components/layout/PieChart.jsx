@@ -15,7 +15,7 @@ const timelineData = [
     icon: Calendar,
     relatedIds: [2],
     status: "completed",
-    energy: 100,
+    energy: 100
   },
   {
     id: 2,
@@ -25,8 +25,8 @@ const timelineData = [
     category: "Design",
     icon: FileText,
     relatedIds: [1, 3],
-    status: "completed" ,
-    energy: 90,
+    status: "completed",
+    energy: 90
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const timelineData = [
     icon: Code,
     relatedIds: [2, 4],
     status: "in-progress",
-    energy: 60,
+    energy: 60
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const timelineData = [
     icon: User,
     relatedIds: [3, 5],
     status: "pending",
-    energy: 30,
+    energy: 30
   },
   {
     id: 5,
@@ -59,8 +59,8 @@ const timelineData = [
     icon: Clock,
     relatedIds: [4],
     status: "pending",
-    energy: 10,
-  },
+    energy: 10
+  }
 ];
 
 // Card Component
@@ -176,9 +176,7 @@ export default function TriangleGrid() {
         </div>
       </div>
 
-
-{/* <RadialOrbitalTimeline timelineData={timelineData}/> */}
-
+      {/* <RadialOrbitalTimeline timelineData={timelineData}/> */}
     </div>
   );
 }
