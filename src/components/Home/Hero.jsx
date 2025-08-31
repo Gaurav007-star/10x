@@ -56,7 +56,7 @@ const Hero = () => {
             <img
               src={Background}
               alt="background"
-              className="w-full h-[400px] max-[450px]:h-fit object-cover object-center rounded-2xl"
+              className="w-full h-[400px] max-[450px]:h-[300px] object-cover object-center rounded-2xl"
             />
           </div>
         </div>

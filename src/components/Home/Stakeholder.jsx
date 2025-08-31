@@ -4,7 +4,7 @@ import { Element } from "react-scroll";
 
 const Stakeholder = () => {
   return (
-    <Element name="stakeholder" className="w-full h-max flex flex-col px-10 mt-20">
+    <Element name="stakeholder" className="w-full h-max flex flex-col px-10 max-[450px]:px-5 mt-20">
       <h1 className="w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">
         National Integration
       </h1>

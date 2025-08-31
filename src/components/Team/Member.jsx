@@ -18,7 +18,7 @@ import Tutan from "../../asset/Teams Img/Tutan Ahmed.jpg";
 const UserCard = ({ image }) => {
   return (
     <div className="card bg-base-100 w-full shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
-      <figure className="w-full h-60 max-[450px]:h-60">
+      <figure className="w-full h-60 max-[450px]:h-80">
         <img src={image.src} alt={image.title} className="object-cover" />
       </figure>
       <div className="card-body">
@@ -124,8 +124,8 @@ export default function Member() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col h-max w-full bg-white px-[10vw] my-10">
-      <h1 className="w-full h-max text-[60px] text-primary text-center font-semibold">
+    <div className="flex flex-col h-max w-full bg-white px-[10vw] max-[450px]:px-5 my-10">
+      <h1 className="w-full h-max text-[60px] max-[450px]:text-[40px] text-primary text-center font-semibold">
         Team
       </h1>
       <div className="bottom-section w-full h-max flex max-[1025px]:flex-col my-10 max-[450px]:my-0">

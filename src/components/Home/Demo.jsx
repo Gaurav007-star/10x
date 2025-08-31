@@ -3,18 +3,18 @@ import { Element } from "react-scroll";
 
 import Horizontal from "../ui/Horizontal";
 import DemoExample from "../ui/DemoExample";
-import bloomSphere from "../../asset/demo/boolSphere.jpg";
+import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 import OpenObe from "../../asset/demo/OpenObe.jpg";
 import filo from "../../asset/filo.jpg";
-import merakilabs from "../../asset/demo/merakiLabs.jpg";
-import IItkgp from "../../asset/demo/iitKgp.jpg";
+import merakilabs from "../../asset/merakilabs.jpg";
+import IItkgp from "../../asset/kgp-icon.png";
 
 const cards = [
   {
     props: {
       imgLink: bloomSphere,
       title: "BloomSphere AI",
-      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis. It helps educators design higher-order thinking assessments, provides real-time feedback, and supports large-scale adoption, promoting conceptual understanding over rote learning.",
+      desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis.",
       link: "https://bloomfront-production.up.railway.app/"
     },
     id: 1
@@ -23,7 +23,7 @@ const cards = [
     props: {
       imgLink: OpenObe,
       title: "OpenOBE",
-      desc: "This tool will be a comprehensive, open-source, web-based platform that supports educational institutions, faculty, and accreditation bodies in implementing and sustaining Outcome-Based Education (OBE). It will enable the end-to-end lifecycle of curriculum design, review, and monitoring, ensuring alignment with national and international standards such as NBA, NAAC, ABET, and Washington Accord.",
+      desc: "This tool will be a comprehensive, open-source, web-based platform that supports educational institutions, faculty, and accreditation bodies in implementing and sustaining Outcome-Based Education (OBE).",
       link: "https://ide.iitkgp.ac.in/Pedagogy1/pedagogy_main.jsp"
     },
     id: 2

@@ -71,25 +71,25 @@ const PartnersData = [
     id: 3,
     title: "EdTech",
     logos: [
-      { name: "Filo", logo: Logo21 },
-      { name: "Meraki Labs", logo: Logo22 },
-      { name: "Mindspark", logo: Logo17 },
-      { name: "CL educate", logo: Logo18 },
-      { name: "DEXIT", logo: Logo19 },
-      { name: "EduVerse", logo: Logo20 },
-      { name: "The School of AI", logo: Logo23 },
-      { name: "Edu", logo: Logo29 }
+      {id:"EdTech", name: "Meraki Labs", logo: Logo22 },
+      {id:"EdTech", name: "Mindspark", logo: Logo17 },
+      {id:"EdTech", name: "CL educate", logo: Logo18 },
+      {id:"EdTech", name: "DEXIT", logo: Logo19 },
+      {id:"EdTech", name: "Filo", logo: Logo21 },
+      {id:"EdTech", name: "EduVerse", logo: Logo20 },
+      {id:"EdTech", name: "The School of AI", logo: Logo23 },
+      {id:"EdTech", name: "Edu", logo: Logo29 }
     ]
   },
   {
     id: 4,
     title: "Academia and Schools",
     logos: [
-      { name: "DAV Model School IIT Kharagpur", logo: Logo26 },
       { name: "IIT Dhanbad", logo: Logo30 },
       { name: "IIT BHU", logo: Logo31 },
       { name: "Ashoka University", logo: Logo24 },
       { name: "UVCE", logo: Logo32 },
+      { name: "DAV Model School IIT Kharagpur", logo: Logo26 },
       { name: "Griffins International School, Kharagpur", logo: Logo25 },
     ]
   }
@@ -99,8 +99,8 @@ const Partners = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full h-max px-[10vw] my-10">
-      <h1 className="w-full h-max text-[60px] text-primary text-center font-semibold">
+    <div className="w-full h-max px-[10vw] max-[450px]:px-5  my-10">
+      <h1 className="w-full h-max text-[60px] max-[450px]:text-[40px] text-primary text-center font-semibold">
         Partners
       </h1>
       <div className="bottom-section w-full h-max flex max-[1025px]:flex-col my-10 max-[450px]:my-0">
@@ -130,12 +130,11 @@ const Partners = () => {
         </h2> */}
           <div className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-[450px]:grid-cols-1  gap-x-4 gap-y-6 justify-center-safe">
             {PartnersData[activeIndex].logos.map((item, idx) => (
-              // <UserCard key={idx} image={img} />
               <img
                 key={idx}
                 src={item.logo}
                 alt=""
-                className={`w-50 max-[450px]:w-full h-auto object-cover`}
+                className={`h-auto w-50 max-[450px]:w-full object-cover`}
               />
             ))}
           </div>

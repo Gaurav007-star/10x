@@ -21,7 +21,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
   });
 
   // Map scroll progress to x movement
-  const rawX = useTransform(scrollYProgress, [0, 1], ["50%", "-45%"]);
+  const rawX = useTransform(scrollYProgress, [0, 1], ["32%", "-45%"]);
 
   // Smooth out the motion
   const x = useSpring(rawX, {
@@ -50,7 +50,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[550px] w-[500px] overflow-hidden rounded-xl"
+      className="group relative h-[500px] w-[400px] overflow-hidden rounded-xl"
     >
       <div
         style={{

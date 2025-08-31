@@ -5,7 +5,7 @@ export default function Tooltip({ children, tableData, position = "top" }) {
 
   return (
     <div
-      className="relative"
+      className="relative "
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
@@ -14,7 +14,7 @@ export default function Tooltip({ children, tableData, position = "top" }) {
         <div
           className={`
             absolute z-50 p-0 rounded-md w-[700px] max-[1025px]:w-[400px] bg-white text-black text-base
-            transition-all duration-200 ${
+            transition-all duration-200 max-[450px]:overflow-x-scroll ${
               tableData?.headers?.length > 0 ? "border border-black" : ""
             }
             ${
