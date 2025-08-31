@@ -50,7 +50,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[900px] overflow-hidden rounded-xl"
+      className="group relative h-[550px] w-[500px] overflow-hidden rounded-xl"
     >
       <div
         style={{
