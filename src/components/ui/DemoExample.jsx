@@ -6,13 +6,31 @@ import DialogContentComponent from "./DialogContentComponent";
 import { Button } from "./button";
 import { motion } from "motion/react";
 
-const DemoExample = ({ imgLink, videoLink, thumbnail, title, desc, link }) => {
+const DemoExample = ({
+  imgLink,
+  videoLink,
+  thumbnail,
+  title,
+  desc,
+  link,
+  imageId
+}) => {
   return (
-    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[600px] max-[400px]:h-[80vh] max-[450px]:h-[70vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5 ">
+    <div className="flex max-[450px]:flex-col w-full h-full max-[1025px]:h-[600px] max-[400px]:h-[80vh] max-[450px]:h-[70vh] gap-4 p-4 max-[1025px]:px-10 max-[450px]:px-5">
       <Dialog>
-        <div className="right w-full h-full flex flex-col items-center justify-center bg-white border-[1px] shadow-md border-primary text-black rounded-3xl py-4 px-5">
+        <div className="right w-full h-full flex flex-col items-center justify-center bg-white border-[1px] shadow-md border-primary text-black rounded-3xl py-4 px-5 overflow-hidden">
           <div className="top-section h-[30%] w-full  flex items-center justify-center">
-            <img src={imgLink || thumbnail} alt={title} className="w-auto h-full object-cover" />
+            <img
+              src={imgLink || thumbnail}
+              alt={title}
+              className={`w-auto ${
+                imageId === "IItkgp"
+                  ? "h-30"
+                  : imageId === "merakilabs"
+                  ? "h-60"
+                  : "h-full"
+              }  object-cover`}
+            />
           </div>
           <div className="middle-section w-full h-[50%] flex flex-col items-center gap-2">
             <h1

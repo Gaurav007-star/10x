@@ -15,7 +15,8 @@ const cards = [
       imgLink: bloomSphere,
       title: "BloomSphere AI",
       desc: "Bloomsphere AI is an AI-powered educational platform that leverages Bloom’s Taxonomy to automate personalised question generation, assessment creation, and question paper analysis.",
-      link: "https://bloomfront-production.up.railway.app/"
+      link: "https://bloomfront-production.up.railway.app/",
+      imageId: "BloomSphere"
     },
     id: 1
   },
@@ -24,7 +25,8 @@ const cards = [
       imgLink: OpenObe,
       title: "OpenOBE",
       desc: "This tool will be a comprehensive, open-source, web-based platform that supports educational institutions, faculty, and accreditation bodies in implementing and sustaining Outcome-Based Education (OBE).",
-      link: "https://ide.iitkgp.ac.in/Pedagogy1/pedagogy_main.jsp"
+      link: "https://ide.iitkgp.ac.in/Pedagogy1/pedagogy_main.jsp",
+      imageId: "OpenOBE"
     },
     id: 2
   },
@@ -34,7 +36,8 @@ const cards = [
         "https://www.youtube.com/embed/nlB98oEVxuo?si=zN9X6ja03Eu3FSOw",
       thumbnail: merakilabs,
       title: "Interactive Problem Solving",
-      desc: "This demo shows interactive and multimodal problem solving in physics."
+      desc: "This demo shows interactive and multimodal problem solving in physics.",
+      imageId: "merakilabs"
     },
     id: 3
   },
@@ -44,7 +47,8 @@ const cards = [
         "https://www.youtube.com/embed/9mc_h4jeNa4?si=E2h_GHZD-9LSuOWN",
       thumbnail: merakilabs,
       title: "Guided Problem Solving with Error Identification",
-      desc: "Understanding Energy and Momentum in Spring Systems. The background AI identifies mistakes in student provided solution and guides the student towards the solution"
+      desc: "Understanding Energy and Momentum in Spring Systems. The background AI identifies mistakes in student provided solution and guides the student towards the solution",
+      imageId: "merakilabs"
     },
     id: 4
   },
@@ -54,7 +58,8 @@ const cards = [
         "https://www.youtube.com/embed/VUqbnlvcEdc?si=m4mA5tEUpIDK3UsT",
       thumbnail: filo,
       title: "FLN Problem Solving in Odia",
-      desc: "This demonstrates basic addition problem solving in Odia with setp-wise explanation."
+      desc: "This demonstrates basic addition problem solving in Odia with setp-wise explanation.",
+      imageId: "filo"
     },
     id: 5
   },
@@ -64,7 +69,8 @@ const cards = [
         "https://www.youtube.com/embed/4OKhESgwEMA?si=S8eB9E0Y2F75AgSY",
       thumbnail: filo,
       title: "BODMAS Rule",
-      desc: "The video demonstrates AI-based step-wise explanation of the famous mnemonics for solving cmplex arithmatic expressions."
+      desc: "The video demonstrates AI-based step-wise explanation of the famous mnemonics for solving cmplex arithmatic expressions.",
+      imageId: "filo"
     },
     id: 6
   },
@@ -74,7 +80,8 @@ const cards = [
         "https://www.youtube.com/embed/3T4l0i1YsUM?si=1xOAlG2vNrGWPfe4",
       thumbnail: IItkgp,
       title: "Which object is bigger?",
-      desc: "This video demonstrates the assessment of a student on his powers of observation and comparison."
+      desc: "This video demonstrates the assessment of a student on his powers of observation and comparison.",
+      imageId: "IItkgp"
     },
     id: 7
   },
@@ -84,7 +91,8 @@ const cards = [
         "https://www.youtube.com/embed/xnJ2FtRzeME?si=nGniBeZ3z25d1wFQ",
       thumbnail: IItkgp,
       title: "Literacy and Numeracy through a word arithmetic problem",
-      desc: "This video assess a student's literacy and numeracy through a word problem in basic arithmetic - subtraction involving carrying."
+      desc: "This video assess a student's literacy and numeracy through a word problem in basic arithmetic - subtraction involving carrying.",
+      imageId: "IItkgp"
     },
     id: 8
   }
