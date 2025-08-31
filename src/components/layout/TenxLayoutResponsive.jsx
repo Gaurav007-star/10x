@@ -27,7 +27,7 @@ const fadeUp = {
 
 export default function TenXLayoutResponsive() {
   return (
-    <div className="w-full h-max py-5 px-5 max-[450px]:px-1 mt-5 max-[450px]:mt-0 grid grid-cols-2 max-[450px]:grid-cols-1 gap-2 min-[1025px]:hidden">
+    <div className="w-full h-max py-5 px-5 max-[450px]:px-1 mt-5 max-[450px]:mt-0 grid grid-cols-2 max-[450px]:grid-cols-1 gap-2 min-[1025px]:hidden ">
       {/* Left Items */}
       {leftItems.map((text, i) => (
         <motion.div

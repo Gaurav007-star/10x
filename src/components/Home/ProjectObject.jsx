@@ -13,7 +13,7 @@ import TenXLayoutResponsive from "../layout/TenxLayoutResponsive";
 const ProjectObject = () => {
   return (
     <Element >
-      <div className="relative w-full h-screen flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 mt-20 max-[1025px]:my-2">
+      <div className="relative w-full h-screen max-[1025px]:h-max flex flex-col items-center px-20 max-[1025px]:px-5 pt-20 mt-20 max-[1025px]:my-2">
         <h1 className="absolute top-0 w-full h-max text-[60px] max-[450px]:text-[30px] text-center text-primary font-bold p-2 z-20">
           10x Teacher Goals
         </h1>
@@ -29,18 +29,6 @@ const ProjectObject = () => {
 
       
       {/* matrix table */}
-      <div className="hidden grid-section overflow-hidden w-full h-max flex-col items-center justify-center py-10 max-[450px]:py-0">
-        <SparklesText sparklesCount="2">
-          <h1 className="text-[60px] max-[450px]:text-[25px] font-sans text-primary font-semibold mt-5 max-[450zpx]:mt-10 max-[1025px]:mb-10 mb-20 max-[450px]:mb-5 ">
-            <span className="w-max h-max bg-primary text-secondary px-4 py-6 max-[450px]:p-3 rounded-xl shadow-md">
-              CoEAI4Edu
-            </span>
-            Verticals
-          </h1>
-        </SparklesText>
-
-         {/* <MatrixTable /> */}
-      </div>
     </Element>
   );
 };

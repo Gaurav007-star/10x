@@ -7,6 +7,7 @@ import bloomSphere from "../../asset/demo/BoolmSphere.jpg";
 import OpenObe from "../../asset/demo/OpenObe.jpg";
 import filo from "../../asset/filo.jpg";
 import merakilabs from "../../asset/merakilabs.jpg";
+import IItkgp from "../../asset/kgpDemo.jpg";
 
 const cards = [
   {
@@ -66,6 +67,26 @@ const cards = [
       desc: "The video demonstrates AI-based step-wise explanation of the famous mnemonics for solving cmplex arithmatic expressions."
     },
     id: 6
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/3T4l0i1YsUM?si=1xOAlG2vNrGWPfe4",
+      thumbnail: IItkgp,
+      title: "Which object is bigger?",
+      desc: "This video demonstrates the assessment of a student on his powers of observation and comparison."
+    },
+    id: 7
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/xnJ2FtRzeME?si=nGniBeZ3z25d1wFQ",
+      thumbnail: IItkgp,
+      title: "Literacy and Numeracy through a word arithmetic problem",
+      desc: "This video assess a student's literacy and numeracy through a word problem in basic arithmetic - subtraction involving carrying."
+    },
+    id: 8
   }
 ];
 

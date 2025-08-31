@@ -5,6 +5,8 @@ import { File, Settings, Search } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { Calendar, Code, FileText, User, Clock } from "lucide-react";
 import { Element } from "react-scroll";
+import { GiPlainCircle } from "react-icons/gi";
+import BentoGrid from "./BentoGrid";
 
 const aiVerticalsData = [
   {
@@ -107,6 +109,87 @@ const aiVerticalsData = [
   }
 ];
 
+const data = [
+  {
+    id: 1,
+    title: "FLN and Early Warning Systems",
+    content: [
+      "Reading fluency",
+      "Language comprehension",
+      "Writing ability detection",
+      "Numeracy support",
+      "Teacher co-pilot"
+    ]
+  },
+  {
+    id: 2,
+    title: "Learning Disabilities (LD)",
+    content: [
+      "Multimodal screening AI",
+      "Risk Profiling",
+      "Causal Intervention Engine",
+      "Mobile Diagnostic AI"
+    ]
+  },
+  {
+    id: 3,
+    title: "Assessment Innovations",
+    content: [
+      "Adaptive micro-assessments",
+      "Multimodal response analysis",
+      "Personalization"
+    ]
+  },
+  {
+    id: 4,
+    title: "Digital Content Accreditation",
+    content: [
+      "Composite Accreditation Score",
+      "Curriculum Alignment Engines",
+      "Trust Badges & Ratings"
+    ]
+  },
+  {
+    id: 5,
+    title: "Career Counselling, Mental Health & Affective Learning",
+    content: ["AI Mentor Bot", "Student Wellness Dashboard"]
+  },
+  {
+    id: 6,
+    title: "Teacher Training",
+    content: ["Teacher Co-pilot", "Peer Collaboration Network"]
+  },
+  {
+    id: 7,
+    title: "Pedagogy and Learning Analytics",
+    content: [
+      "AI-assisted doubt clearing",
+      "Personalized lesson plan generation"
+    ]
+  },
+  {
+    id: 8,
+    title: "AI-Driven Decision Support & Interventions",
+    content: [
+      "AI Decision Support",
+      "Personalized Insights",
+      "Human-in-the-Loop"
+    ]
+  }
+];
+
+// define an eye-pleasing bento span layout (col spans out of 12, row spans)
+const spans = [
+  "col-span-6 row-span-2", // big block left
+  "col-span-3 row-span-1", // small block
+  "col-span-3 row-span-1", // small block
+  "col-span-6 row-span-2", // wide block
+  "col-span-6 row-span-1", // medium block
+  "col-span-3 row-span-1", // small block
+  "col-span-6 row-span-1", // footer-wide
+  "col-span-3 row-span-2" // tall block
+];
+
 // Card Component
 const Card = ({ title, points, color }) => {
   return (
@@ -135,93 +218,55 @@ export default function TriangleGrid() {
   return (
     <Element name="project">
       <div className="relative h-max w-full flex flex-col items-center justify-center mb-10 bg-white">
-        {/* <img
-        src={background}
-        alt=""
-        className="w-full h-full absolute top-0 left-0 object-contain opacity-40"
-      /> */}
-        <h1 className="w-full h-max text-center text-[60px] text-primary font-bold mt-10 z-50">
+        {/* <h1 className="w-full h-max text-center text-[60px] text-primary font-bold mt-10 z-50">
           Verticals
-        </h1>
+        </h1> */}
 
-        {/* <div className="w-full space-y-14 px-[15vw]">
-        <div className="flex items-center justify-center">
-          <Card
-            color={"#26A9E0"}
-            title="Learning Disabilities (LD)"
-            points={[
-              "Multimodal screening AI",
-              "Risk Profiling",
-              "Causal Intervention Engine",
-              "Mobile Diagnostic AI"
-            ]}
-          />
-        </div>
+        {/* Grid layout */}
+        {/* <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8 w-full px-[10vw] mt-10">
+          {aiVerticalsData.map((item) => {
+            return (
+              <div className="h-[250px] max-[1300px]:h-[300px] p-4 bg-secondary rounded-xl shadow-md hover:scale-105 cursor-pointer transition-transform duration-300">
+                <h1 className="text-[18px] font-semibold text-primary h-[25%]">{item.title}</h1>
+                <ul className="flex flex-col gap-2 py-4">
+                  {item.content.map((sub) => {
+                    return (
+                      <li className="flex items-center gap-2 text-[16px]">
+                        <span>
+                          <GiPlainCircle className="w-2 h-2 text-primary" />
+                        </span>
+                        <span>{sub}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div> */}
 
-        <div className="flex items-center justify-center gap-10">
-          <Card
-            color={"#1B75BB"}
-            title="Assessment Innovations"
-            points={[
-              "Adaptive micro-assessments",
-              "Multimodal response analysis",
-              "Personalization"
-            ]}
-          />
-          <Card
-            color={"#1B75BB"}
-            title="Digital Content Accreditation"
-            points={[
-              "Composite Accreditation Score",
-              "Curriculum Alignment Engines",
-              "Trust Badges & Ratings"
-            ]}
-          />
-          <Card
-            color={"#1B75BB"}
-            title="Career Counselling, Mental Health & Affective Learning"
-            points={["AI Mentor Bot", "Student Wellness Dashboard"]}
-          />
-        </div>
+        {/* <div className="wrapper w-full px-[10vw]">
+          <div className="grid grid-cols-12 gap-6 auto-rows-[200px]">
+            {data.map((item, i) => (
+              <div
+                key={item.id}
+                className={`${spans[i]} ${item.color} rounded-2xl p-6 flex flex-col justify-between shadow-lg`}
+              >
+                <h2 className="text-lg font-semibold">{item.title}</h2>
+                <ul className="text-sm mt-2 space-y-1 list-disc list-inside">
+                  {item.content.map((c, idx) => (
+                    <li key={idx}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div> */}
 
-        <div className="flex items-center justify-center gap-10">
-          <Card
-            color={"#1F41AE"}
-            title="FLN and Early Warning Systems"
-            points={[
-              "Reading fluency",
-              "Language comprehension",
-              "Writing ability detection",
-              "Numeracy support",
-              "Teacher co-pilot"
-            ]}
-          />
-          <Card
-            color={"#1F41AE"}
-            title="Teacher Training"
-            points={["Teacher Co-pilot", "Peer Collaboration Network"]}
-          />
-          <Card
-            color={"#1F41AE"}
-            title="Pedagogy and Learning Analytics"
-            points={[
-              "AI-assisted doubt clearing",
-              "Personalized lesson plan generation"
-            ]}
-          />
-          <Card
-            color={"#1F41AE"}
-            title="AI-Driven Decision Support & Interventions"
-            points={[
-              "AI Decision Support",
-              "Personalized Insights",
-              "Human-in-the-Loop"
-            ]}
-          />
-        </div>
-      </div> */}
+        {/* <RadialOrbitalTimeline timelineData={aiVerticalsData} /> */}
 
-        <RadialOrbitalTimeline timelineData={aiVerticalsData} />
+
+        <BentoGrid/>
       </div>
     </Element>
   );

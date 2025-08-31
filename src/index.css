@@ -7,6 +7,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-accent-one: #26a9e0;
+  --color-accent-two: #1b75bb;
+  --color-accent-three: #1f41ae;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -49,7 +52,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --animate-slideDown:slideDown .5s infinite;
+  --animate-slideDown: slideDown 0.5s infinite;
   @keyframes slideDown {
     0% {
       transform: "scaleY(0)";
@@ -58,8 +61,6 @@
       transform: "scaleY(1)";
     }
   }
-
-
 
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
@@ -113,6 +114,7 @@
 :root {
   --background: #ffffff;
   --foreground: #333333;
+
   --card: #ffffff;
   --card-foreground: #333333;
   --popover: #ffffff;

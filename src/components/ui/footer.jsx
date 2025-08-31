@@ -47,7 +47,7 @@ export const Footer = () => {
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-4 mt-5 text-xl max-[450px]:hidden">
+            {/* <div className="flex gap-4 mt-5 text-xl max-[450px]:hidden">
               {defaultSocialLinks.map((social, idx) => (
                 <a
                   key={idx}
@@ -58,7 +58,7 @@ export const Footer = () => {
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT SIDE */}

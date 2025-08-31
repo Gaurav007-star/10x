@@ -1,21 +1,24 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-const Card = React.forwardRef(({ className, open, ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "rounded-lg border bg-card transition-all duration-300 z-[1000]",
-        open === "top" && "origin-top animate-slideDown",
-        open === "left" && "origin-left animate-slideRight",
-        open === "right" && "origin-right animate-slideLeft",
-        className
-      )}
-      {...props}
-    />
-  );
-});
+const Card = React.forwardRef(
+  ({ className, open, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          // ✅ make it positioned so z-index works
+          "relative z-[3000] rounded-lg border bg-card",
+          open === "top" && "origin-top animate-slideDown",
+          open === "left" && "origin-left animate-slideRight",
+          open === "right" && "origin-right animate-slideLeft",
+          className
+        )}
+        {...props}
+      />
+    );
+  }
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
@@ -30,10 +33,7 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
+    className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
     {...props}
   />
 ));
@@ -54,11 +54,7 @@ const CardContent = React.forwardRef(({ className, ...props }, ref) => (
 CardContent.displayName = "CardContent";
 
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
-    {...props}
-  />
+  <div ref={ref} className={cn("flex items-center p-6 pt-0", className)} {...props} />
 ));
 CardFooter.displayName = "CardFooter";
 

@@ -109,7 +109,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
               <div
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
-                className="absolute transition-all duration-700 cursor-pointer"
+                className="absolute transition-all duration-700 cursor-pointer "
                 style={nodeStyle}
                 onMouseEnter={() => toggleItem(item.id)}
                 onMouseLeave={() => {
@@ -122,7 +122,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   {item.title}
                 </div>
                 {isExpanded && (
-                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-70 p-4 bg-white border-2 border-black overflow-visible z-[500]">
+                  <Card className="absolute top-15 left-1/2 -translate-x-1/2 w-70 p-4 bg-white border-2 border-black overflow-visible">
                     <ul className="flex flex-col gap-2 py-2">
                       {item.content.map((sub) => {
                         return (
@@ -157,7 +157,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
               <div
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
-                className="absolute transition-all duration-700 cursor-pointer"
+                className="absolute z-10 duration-700 cursor-pointer"
                 style={nodeStyle}
                 onMouseEnter={() => toggleItem(item.id)}
                 onMouseLeave={() => {
@@ -172,7 +172,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                 {isExpanded && (
                   <Card
                     className={cn(
-                      "absolute w-[280px] p-4 bg-white border-2 border-black rounded-lg shadow-lg z-[1000] transition-all duration-200",
+                      "absolute w-[280px] p-4 bg-white border-2 border-black rounded-lg shadow-lg transition-all duration-200",
 
                       // vertical placement
                       position.y > 50
