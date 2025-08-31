@@ -29,10 +29,10 @@ export const Footer = () => {
   const date = new Date().getFullYear();
 
   return (
-    <section className="w-full h-[500px] max-[1025px]:px-10 px-20 mt-10">
+    <section className="w-full h-[400px] max-[1025px]:px-10 px-20 mt-10">
       <div className="w-full h-full flex flex-col justify-between">
         {/* TOP ROW */}
-        <div className="flex max-[450px]:flex-col w-full justify-between items-start mt-[50px]">
+        <div className="flex max-[450px]:flex-col w-full h-max  justify-between items-start mt-[50px]">
           {/* LEFT SIDE */}
           <div className="w-[55%] max-[450px]:w-full flex flex-col gap-2">
             <img
@@ -92,7 +92,7 @@ export const Footer = () => {
         </div>
 
         {/* BOTTOM ROW */}
-        <div className="text-xs text-center mt-8 pb-5 text-gray-500">
+        <div className="text-xs text-center pb-5 text-gray-500">
           {/* <div className="w-full flex items-center justify-center gap-20 max-[450px]:gap-2 px-4 py-4 max-[450px]:px-2 font-medium text-primary text-[18px] max-[450px]:text-[14px] my-4">
             <Link
               to={"#"}
@@ -113,8 +113,8 @@ export const Footer = () => {
               Legal disclaimer
             </Link>
           </div> */}
-          <h1 className="text-[18px]">
-            ©{date} Dashabhuja 10x Teacher | All rights reserved 
+          <h1 className="text-[18px] ">
+            ©{date} Dashabhuja 10x Teacher | All rights reserved
             {/* <a
               href="https://www.techscooper.com/"
               className="text-sky-500 no-underline hover:underline"
@@ -124,7 +124,6 @@ export const Footer = () => {
             </a> */}
           </h1>
         </div>
-        
       </div>
     </section>
   );
