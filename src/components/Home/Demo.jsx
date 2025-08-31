@@ -4,7 +4,7 @@ import { Element } from "react-scroll";
 import Horizontal from "../ui/Horizontal";
 import DemoExample from "../ui/DemoExample";
 import bloomSphere from "../../asset/demo/boolSphere.jpg";
-import OpenObe from "../../asset/demo/openObe.jpg";
+import OpenObe from "../../asset/demo/OpenObe.jpg";
 import filo from "../../asset/filo.jpg";
 import merakilabs from "../../asset/demo/merakiLabs.jpg";
 import IItkgp from "../../asset/demo/iitKgp.jpg";
