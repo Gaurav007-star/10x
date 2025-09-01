@@ -95,6 +95,27 @@ const cards = [
       imageId: "IItkgp"
     },
     id: 8
+  },
+  {
+    props: {
+      videoLink:
+        "https://www.youtube.com/embed/T3_2PM7DNe4?si=pFKv3qjM7G5U3MbC",
+      thumbnail: IItkgp,
+      title: "CodAR",
+      desc: "CodAR is an augmented-reality-based game to learn computational thinking.",
+      imageId: "IItkgp"
+    },
+    id: 9
+  },
+  {
+    props: {
+      videoLink: "https://www.youtube.com/watch?v=UHQ4uHzUOMg",
+      thumbnail: IItkgp,
+      title: "Bazaar",
+      desc: "Bazaar is a game-based learning platform designed to strengthen students’ numeracy skills through engaging marketplace-style interactions.",
+      imageId: "IItkgp"
+    },
+    id: 10
   }
 ];
 

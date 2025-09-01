@@ -1,5 +1,5 @@
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import image from "../../asset/heroBackground.jpg";
 import aiImage from "../../asset/ai.jpg";
 import DemoExample from "./DemoExample";
@@ -20,8 +20,20 @@ const HorizontalScrollCarousel = ({ cards }) => {
     target: targetRef
   });
 
-  // Map scroll progress to x movement
-  const rawX = useTransform(scrollYProgress, [0, 1], ["32%", "-45%"]);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // update width on resize
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Choose transform values based on screen width
+  const startX = screenWidth > 1280 ? "35%" : "37%";
+  const endX = "-45%";
+
+  const rawX = useTransform(scrollYProgress, [0, 1], [startX, endX]);
 
   // Smooth out the motion
   const x = useSpring(rawX, {
